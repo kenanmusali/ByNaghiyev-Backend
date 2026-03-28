@@ -1,51 +1,70 @@
-import About    from "./components/about"
-import Blogs    from "./components/blogs"
-import Category from "./components/category"
-import Footer   from "./components/footer"
-import Header   from "./components/header"
-import Navbar   from "./components/navbar"
-import Products from "./components/products"
-import ZoomWrapper from "./ZoomWrapper"
-import useSiteData from "./hooks/useSiteData"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import LogoSvg from '../public/assets/svg/logo.svg'
+import bgSvg from '../public/assets/svg/bg-body.svg'
+import "./Login.css"
 
 const App = () => {
-  const { data, loading, error } = useSiteData()
+  const navigate = useNavigate()
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleLogin = () => {
+    if (email === "admin@bynaghiyev.com" && password === "HelloNaghiyev2026") {
+      setIsLoading(true)
+      localStorage.setItem("isAuth", "true")
+      setTimeout(() => {
+        navigate("/admin")
+      }, 500)
+    } else {
+      alert("Wrong email or password")
+    }
+  }
 
   return (
-    <div className="AdminOn">
-      {/* Navbar always shows – uses cached/default data instantly */}
-      <Navbar navData={data?.navbar} />
+    <div className='Login-Page'>
+      <img src={bgSvg} className='bg-body' alt="" />
+      
+      <div className="Login">
+        <img className='Logo' src={LogoSvg} alt="Logo" />
+        
+        <h1 className="Welcome-Title">Welcome</h1>
+        <p className="Welcome-Subtitle">Sign in to access your Admin panel</p>
 
-      <Header headerData={data?.header} />
-
-      <ZoomWrapper>
-        <About aboutData={data?.about} />
-      </ZoomWrapper>
-
-      <Category />
-
-      <ZoomWrapper>
-        <Products productsData={data?.products} />
-      </ZoomWrapper>
-
-      <ZoomWrapper>
-        <Blogs blogsData={data?.blogs} />
-      </ZoomWrapper>
-
-      <Footer footerData={data?.footer} />
-
-      {/* Non-blocking error toast */}
-      {error && !loading && (
-        <div style={{
-          position: 'fixed', bottom: 16, left: '50%', transform: 'translateX(-50%)',
-          background: '#333', color: '#fff', padding: '10px 20px',
-          borderRadius: 8, fontSize: 13, zIndex: 9999,
-          boxShadow: '0 4px 16px rgba(0,0,0,.25)',
-          maxWidth: 'calc(100vw - 32px)', textAlign: 'center',
-        }}>
-          ⚠️ Could not refresh content — showing cached version.
+        <div className="SlotSection">
+          <div className="Input-Group">
+            <input
+              type="email"
+              className="InputField"
+              placeholder="Email address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            
+            <input
+              type="password"
+              className="InputField"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
+            />
+            
+            <button 
+              className={`Login-Button ${isLoading ? 'loading' : ''}`} 
+              onClick={handleLogin}
+              disabled={isLoading}
+            >
+              {isLoading ? 'ACCESSING...' : 'LOGIN'}
+            </button>
+          </div>
         </div>
-      )}
+        
+        <div className="Footer-Note">
+          <span>Protected area · Admin only</span>
+        </div>
+      </div>
     </div>
   )
 }
