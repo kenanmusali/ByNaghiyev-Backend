@@ -1,0 +1,12 @@
+# Netlify configuration
+# This file handles SPA routing so /admin (and all routes) work on Netlify.
+# Required because your public/_redirects is a FOLDER (for assets), not a file.
+
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

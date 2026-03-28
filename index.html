@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-85" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/svg/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>By Naghiyev</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+  const section = document.querySelector('.Footer-Group .Footer-Section:nth-child(1)');
+  
+  if (!section) return;
+  
+  // Get the section height
+  const sectionHeight = section.offsetHeight;
+  
+  // Create a new image to get its natural height
+  const img = new Image();
+  img.src = '../assets/svg/footer-bg-1.svg';
+  
+  img.onload = function() {
+    const imageHeight = img.height;
+    
+    // Calculate how many times the image needs to repeat
+    const repeatCount = Math.ceil(sectionHeight / imageHeight) + 1; // +1 for overlap
+    
+    // Build the background properties
+    let backgroundImage = '';
+    let backgroundPosition = '';
+    let backgroundRepeat = '';
+    
+    for (let i = 0; i < repeatCount; i++) {
+      if (i > 0) {
+        backgroundImage += ', ';
+        backgroundPosition += ', ';
+        backgroundRepeat += ', ';
+      }
+      
+      backgroundImage += 'url(../assets/svg/footer-bg-1.svg)';
+      backgroundPosition += `0 ${-i * 10}px`; // Each image is 10px higher than the last
+      backgroundRepeat += 'repeat-y';
+    }
+    
+    // Apply the styles
+    section.style.backgroundImage = backgroundImage;
+    section.style.backgroundPosition = backgroundPosition;
+    section.style.backgroundRepeat = backgroundRepeat;
+    section.style.backgroundSize = 'auto'; // Keeps original size
+  };
+  
+  // Fallback if image fails to load
+  img.onerror = function() {
+    console.log('Image failed to load, using fallback');
+    fallbackBackground(section);
+  };
+});
+
+// Fallback function if image height can't be determined
+function fallbackBackground(section) {
+  const sectionHeight = section.offsetHeight;
+  const estimatedImageHeight = 100; // Estimate - replace with your actual image height
+  const repeatCount = Math.ceil(sectionHeight / estimatedImageHeight) + 1;
+  
+  let backgroundImage = '';
+  let backgroundPosition = '';
+  
+  for (let i = 0; i < repeatCount; i++) {
+    if (i > 0) {
+      backgroundImage += ', ';
+      backgroundPosition += ', ';
+    }
+    
+    backgroundImage += 'url(../assets/svg/footer-bg-1.svg)';
+    backgroundPosition += `0 ${-i * 10}px`;
+  }
+  
+  section.style.backgroundImage = backgroundImage;
+  section.style.backgroundPosition = backgroundPosition;
+  section.style.backgroundRepeat = 'repeat-y';
+  section.style.backgroundSize = 'auto';
+}
+    </script>
+  </body>
+</html>
