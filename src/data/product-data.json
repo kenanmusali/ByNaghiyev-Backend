@@ -1,0 +1,132 @@
+{
+  "sectionTitle": {
+    "en": "Products",
+    "az": "Məhsullar"
+  },
+  "orderNowText": {
+    "en": "Order Now",
+    "az": "Sifariş Et"
+  },
+  "orderInstagramText": {
+    "en": "Order in Instagram",
+    "az": "Instagram-da Sifariş Et"
+  },
+  "orderEbayText": {
+    "en": "Order in EBay",
+    "az": "EBay-da Sifariş Et"
+  },
+  "products": [
+    {
+      "id": 1,
+      "name": {
+        "en": "Scented Candle 1",
+        "az": "Ətirli Şam 1"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 2,
+      "name": {
+        "en": "Scented Candle 2",
+        "az": "Ətirli Şam 2"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 3,
+      "name": {
+        "en": "Scented Candle 3",
+        "az": "Ətirli Şam 3"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 4,
+      "name": {
+        "en": "Scented Candle 4",
+        "az": "Ətirli Şam 4"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 5,
+      "name": {
+        "en": "Scented Candle 5",
+        "az": "Ətirli Şam 5"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 6,
+      "name": {
+        "en": "Scented Candle 6",
+        "az": "Ətirli Şam 6"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 7,
+      "name": {
+        "en": "Scented Candle 7",
+        "az": "Ətirli Şam 7"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    },
+    {
+      "id": 8,
+      "name": {
+        "en": "Scented Candle 8",
+        "az": "Ətirli Şam 8"
+      },
+      "description": {
+        "en": "Natural Waxes & Essential Oils",
+        "az": "Təbii Mumlar & Efir Yağları"
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+    }
+  ]
+}
