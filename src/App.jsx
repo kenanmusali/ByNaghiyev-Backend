@@ -10,16 +10,39 @@ const App = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (email === "admin@bynaghiyev.com" && password === "HelloNaghiyev2026") {
       setIsLoading(true)
-      localStorage.setItem("isAuth", "true")
-      setTimeout(() => {
-        navigate("/admin")
-      }, 500)
+      setError("")
+      
+      try {
+        // Clear any existing auth first
+        localStorage.removeItem("isAuth")
+        
+        // Small delay to ensure removal is processed
+        await new Promise(resolve => setTimeout(resolve, 50))
+        
+        // Set new auth
+        localStorage.setItem("isAuth", "true")
+        
+        // Verify it was set
+        const checkAuth = localStorage.getItem("isAuth")
+        console.log("Auth set:", checkAuth) // Debug log
+        
+        // Ensure storage is committed
+        await new Promise(resolve => setTimeout(resolve, 100))
+        
+        // Navigate with replace to prevent back button issues
+        navigate("/admin", { replace: true })
+      } catch (err) {
+        console.error("Login error:", err)
+        setError("Login failed. Please try again.")
+        setIsLoading(false)
+      }
     } else {
-      alert("Wrong email or password")
+      setError("Wrong email or password")
     }
   }
 
@@ -41,6 +64,7 @@ const App = () => {
               placeholder="Email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              disabled={isLoading}
             />
             
             <input
@@ -50,7 +74,10 @@ const App = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
+              disabled={isLoading}
             />
+            
+            {error && <div className="error-message">{error}</div>}
             
             <button 
               className={`Login-Button ${isLoading ? 'loading' : ''}`} 
