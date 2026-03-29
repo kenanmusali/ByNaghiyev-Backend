@@ -113,8 +113,8 @@ const NavbarEditor = ({ data, onChange }) => {
     <div>
       <Sec title="Logos">
         <Grid cols={2}>
-          <ImageUploader label="Main Logo"  value={logos.logo}     folder="svg" onChange={v => setLogo('logo', v)} />
-          <ImageUploader label="Logo Text"  value={logos.logoText} folder="svg" onChange={v => setLogo('logoText', v)} />
+          <ImageUploader label="Main Logo"   value={logos.logo}     folder="svg" onChange={v => setLogo('logo', v)} />
+          <ImageUploader label="Logo Text"  value={logos.  logoText} folder="svg" onChange={v => setLogo('logoText', v)} />
         </Grid>
       </Sec>
 
