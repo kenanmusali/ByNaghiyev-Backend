@@ -16,44 +16,68 @@
   "navItems": [
     {
       "id": 1,
-      "label": "About us",
+      "label": {
+        "en": "About us",
+        "az": "Haqqımızda"
+      },
       "sectionId": "about"
     },
     {
       "id": 2,
-      "label": "Products",
+      "label": {
+        "en": "Products",
+        "az": "Məhsullar"
+      },
       "sectionId": "products"
     },
     {
       "id": 3,
-      "label": "Blogs",
+      "label": {
+        "en": "Blogs",
+        "az": "Bloqlar"
+      },
       "sectionId": "blogs"
     },
     {
       "id": 4,
-      "label": "Socials",
+      "label": {
+        "en": "Socials",
+        "az": "Sosial Şəbəkələr"
+      },
       "sectionId": "socials"
     }
   ],
   "mobileNavItems": [
     {
       "id": 1,
-      "label": "About us",
+      "label": {
+        "en": "About us",
+        "az": "Haqqımızda"
+      },
       "sectionId": "about"
     },
     {
       "id": 2,
-      "label": "Products",
+      "label": {
+        "en": "Products",
+        "az": "Məhsullar"
+      },
       "sectionId": "products"
     },
     {
       "id": 3,
-      "label": "Blogs",
+      "label": {
+        "en": "Blogs",
+        "az": "Bloqlar"
+      },
       "sectionId": "blogs"
     },
     {
       "id": 4,
-      "label": "Socials",
+      "label": {
+        "en": "Socials",
+        "az": "Sosial Şəbəkələr"
+      },
       "sectionId": "socials"
     }
   ]
