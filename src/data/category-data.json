@@ -6,7 +6,7 @@
   "categories": [
     {
       "id": 1,
-      "icon": "../../public/assets/svg/volunteer_activism.svg",
+      "icon": "/assets/svg/volunteer_activism.svg",
       "name": {
         "en": "Hand Made",
         "az": "Əl İşi"
