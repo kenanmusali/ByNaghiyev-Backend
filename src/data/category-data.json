@@ -6,7 +6,7 @@
   "categories": [
     {
       "id": 1,
-      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/volunteer_activism.svg",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/category/volunteer_activism.svg",
       "name": {
         "en": "Hand Made",
         "az": "Əl İşi"
@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "icon": "../../public/assets/svg/deployed_code.svg",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/category/deployed_code.svg",
       "name": {
         "en": "Premium Materials",
         "az": "Premium Materiallar"
@@ -30,7 +30,7 @@
     },
     {
       "id": 3,
-      "icon": "../../public/assets/svg/asterisk.svg",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/category/asterisk.svg",
       "name": {
         "en": "Modern Design",
         "az": "Müasir Dizayn"
@@ -42,7 +42,7 @@
     },
     {
       "id": 4,
-      "icon": "../../public/assets/svg/psychiatry.svg",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/category/psychiatry.svg",
       "name": {
         "en": "Eco Conscious",
         "az": "Eko Şüurlu"
