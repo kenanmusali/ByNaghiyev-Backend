@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 import LogoSvg from '../public/assets/svg/logo.svg'
 import bgSvg from '../public/assets/svg/bg-body.svg'
 import "./Login.css"
+import "../public/assets/root.css"
 
 const App = () => {
   const navigate = useNavigate()

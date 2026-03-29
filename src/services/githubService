@@ -1,0 +1,156 @@
+/**
+ * githubService.js - Works with individual JSON files
+ */
+
+const TOKEN = import.meta.env.VITE_GITHUB_TOKEN || '';
+const OWNER = import.meta.env.VITE_GITHUB_OWNER || 'By-Naghiyev';
+const REPO = import.meta.env.VITE_GITHUB_REPO || 'Frontend';
+const BRANCH = import.meta.env.VITE_GITHUB_BRANCH || 'main';
+const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
+
+// Individual data file paths (NOT a combined file)
+const DATA_FILES = {
+  navbar: 'src/data/navbar-data.json',
+  header: 'src/data/header-data.json',
+  about: 'src/data/about-data.json',
+  category: 'src/data/category-data.json',
+  products: 'src/data/product-data.json',
+  blogs: 'src/data/blog-data.json',
+  footer: 'src/data/footer-data.json'
+};
+
+const ghFetch = (path, opts = {}) =>
+  fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
+    ...opts,
+    headers: {
+      Authorization: `token ${TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+      ...(opts.headers || {}),
+    },
+  });
+
+const getSHA = async (path) => {
+  try {
+    const res = await ghFetch(path);
+    if (!res.ok) return undefined;
+    return (await res.json()).sha;
+  } catch {
+    return undefined;
+  }
+};
+
+const fileToBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = (e) => resolve(e.target.result.split(',')[1]);
+    r.onerror = reject;
+    r.readAsDataURL(file);
+  });
+
+// Import local fallback data
+import navbarData from '../data/navbar-data.json';
+import headerData from '../data/header-data.json';
+import aboutData from '../data/about-data.json';
+import categoryData from '../data/category-data.json';
+import productData from '../data/product-data.json';
+import blogData from '../data/blog-data.json';
+import footerData from '../data/footer-data.json';
+
+const LOCAL_DATA = {
+  navbar: navbarData,
+  header: headerData,
+  about: aboutData,
+  category: categoryData,
+  products: productData,
+  blogs: blogData,
+  footer: footerData,
+};
+
+/** Fetch all individual data files from GitHub */
+export const fetchSiteData = async () => {
+  if (!TOKEN) {
+    console.warn('No GitHub token, using local data');
+    return LOCAL_DATA;
+  }
+
+  const result = {};
+  
+  for (const [key, path] of Object.entries(DATA_FILES)) {
+    try {
+      const res = await ghFetch(path);
+      if (res.ok) {
+        const { content } = await res.json();
+        result[key] = JSON.parse(atob(content.replace(/\n/g, '')));
+      } else {
+        console.warn(`Failed to fetch ${key}, using local fallback`);
+        result[key] = LOCAL_DATA[key];
+      }
+    } catch (err) {
+      console.warn(`Error fetching ${key}:`, err);
+      result[key] = LOCAL_DATA[key];
+    }
+  }
+  
+  return result;
+};
+
+/** Save individual data file to GitHub */
+const saveSingleFile = async (key, data) => {
+  const path = DATA_FILES[key];
+  if (!path) throw new Error(`Unknown data key: ${key}`);
+  
+  const sha = await getSHA(path);
+  const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
+  
+  const res = await ghFetch(path, {
+    method: 'PUT',
+    body: JSON.stringify({
+      message: `Admin: update ${key} [${new Date().toISOString()}]`,
+      content,
+      ...(sha ? { sha } : {}),
+    }),
+  });
+  
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `Save failed for ${key} (${res.status})`);
+  }
+  
+  return res.json();
+};
+
+/** Save all data files to GitHub */
+export const saveSiteData = async (data) => {
+  if (!TOKEN) throw new Error('VITE_GITHUB_TOKEN is not set');
+  
+  const saves = [];
+  for (const [key, value] of Object.entries(data)) {
+    if (DATA_FILES[key]) {
+      saves.push(saveSingleFile(key, value));
+    }
+  }
+  
+  await Promise.all(saves);
+  return true;
+};
+
+/** Upload image */
+export const uploadImage = async (file, relativePath) => {
+  if (!TOKEN) throw new Error('VITE_GITHUB_TOKEN is not set');
+  const base64 = await fileToBase64(file);
+  const sha = await getSHA(relativePath);
+  const res = await ghFetch(relativePath, {
+    method: 'PUT',
+    body: JSON.stringify({
+      message: `Upload: ${relativePath}`,
+      content: base64,
+      ...(sha ? { sha } : {}),
+    }),
+  });
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err.message || `Upload failed (${res.status})`);
+  }
+  return `${RAW_BASE}/${relativePath}`;
+};

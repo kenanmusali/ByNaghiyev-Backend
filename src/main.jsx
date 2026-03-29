@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import '../public/assets/root.css'
 
 import App from './App.jsx'
-import AdminApp from './admin/AdminApp.jsx'
+import AdminApps from './admin/AdminApps.jsx'
 import NotFound from './components/notfound.jsx'
 
 const isAuth = () => localStorage.getItem("isAuth") === "true"
@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route
           path="/admin"
-          element={isAuth() ? <AdminApp /> : <Navigate to="/" />}
+          element={isAuth() ? <AdminApps /> : <Navigate to="/" />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>

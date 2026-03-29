@@ -1,0 +1,63 @@
+{
+  "navbar": {
+    "logos": {
+      "logo": "",
+      "logoText": ""
+    },
+    "icons": {
+      "menu": "",
+      "close": "",
+      "azFlag": "",
+      "enFlag": "",
+      "autoTheme": "",
+      "lightTheme": "",
+      "darkTheme": "",
+      "bgPattern": ""
+    },
+    "navItems": [],
+    "mobileNavItems": []
+  },
+  "header": {
+    "images": [],
+    "headerText": {
+      "subtitle": { "en": "", "az": "" },
+      "title": { "en": "", "az": "" }
+    },
+    "buttonTexts": {
+      "discoverCollection": { "en": "", "az": "" },
+      "orderNow": { "en": "", "az": "" }
+    }
+  },
+  "about": {
+    "sectionTitle": { "en": "", "az": "" },
+    "images": [],
+    "texts": { "en": [], "az": [] }
+  },
+  "category": {
+    "sectionTitle": { "en": "", "az": "" },
+    "categories": []
+  },
+  "products": {
+    "sectionTitle": { "en": "", "az": "" },
+    "orderNowText": { "en": "", "az": "" },
+    "orderInstagramText": { "en": "", "az": "" },
+    "orderEbayText": { "en": "", "az": "" },
+    "products": []
+  },
+  "blogs": {
+    "sectionTitle": { "en": "", "az": "" },
+    "readMoreText": { "en": "", "az": "" },
+    "blogs": []
+  },
+  "footer": {
+    "logo": "",
+    "description": { "en": "", "az": "" },
+    "socialsTitle": { "en": "", "az": "" },
+    "newsletterTitle": { "en": "", "az": "" },
+    "emailPlaceholder": { "en": "", "az": "" },
+    "subscribeText": { "en": "", "az": "" },
+    "copyrightText": { "en": "", "az": "" },
+    "termsText": "",
+    "socials": []
+  }
+}
