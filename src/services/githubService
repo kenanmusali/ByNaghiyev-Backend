@@ -10,13 +10,13 @@ const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
 
 // Individual data file paths (NOT a combined file)
 const DATA_FILES = {
-  navbar: 'src/data/navbar-data.json',
-  header: 'src/data/header-data.json',
-  about: 'src/data/about-data.json',
-  category: 'src/data/category-data.json',
-  products: 'src/data/product-data.json',
-  blogs: 'src/data/blog-data.json',
-  footer: 'src/data/footer-data.json'
+  navbar: '../data/navbar-data.json',
+  header: '../data/header-data.json',
+  about: '../data/about-data.json',
+  category: '../data/category-data.json',
+  products: '../data/product-data.json',
+  blogs: '../data/blog-data.json',
+  footer: '../data/footer-data.json'
 };
 
 const ghFetch = (path, opts = {}) =>
