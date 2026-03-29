@@ -65,7 +65,7 @@ const ImageUploader = ({ value, onChange, folder = 'img/uploads', label }) => {
     cursor: 'pointer',
     borderRadius: 6,
     border: '1px solid var(--a-border)',
-    background: active ? 'var(--a-primary, #2563eb)' : 'transparent',
+    background: active ? 'var(--a-primary, #19914b)' : 'transparent',
     color: active ? '#fff' : 'var(--a-muted)',
     fontWeight: active ? 600 : 400,
   });
@@ -148,6 +148,7 @@ const ImageUploader = ({ value, onChange, folder = 'img/uploads', label }) => {
               border: '1px solid var(--a-border)',
               background: 'var(--a-surface)',
               padding: 4,
+              backgroundColor: '#9ec7ac',
             }}
           />
           {imageError && (

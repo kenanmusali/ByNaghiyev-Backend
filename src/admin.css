@@ -260,6 +260,7 @@
   border-radius: 6px;
   border: 1.5px solid var(--a-border);
   background: var(--a-bg);
+  
   flex-shrink: 0;
 }
 .adm-img-placeholder {
