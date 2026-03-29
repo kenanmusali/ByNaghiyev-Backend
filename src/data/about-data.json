@@ -1,0 +1,26 @@
+{
+  "sectionTitle": {
+    "en": "About us",
+    "az": "Haqqımızda"
+  },
+  "logoTextSvg": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/logo-text.svg",
+  "images": [
+    "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/about/about1.png",
+    "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/about/about2.png",
+    "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/about/about3.png"
+  ],
+  "texts": {
+    "en": [
+      "The",
+      "Azerbaijani brand. It is engaged in the production of decorative items for the home, scented and variously designed candles, epoxy pots.",
+      "The products are handmade, made to order. Delivery to any address is possible. Hurry up to order.",
+      "With By Naghiyev products, you can also give your home an aesthetic touch and change the energy!"
+    ],
+    "az": [
+      "The",
+      "Azərbaycan brendi. Ev üçün dekorativ əşyaların, ətirli və müxtəlif dizaynlı şamların, epoksi qabların istehsalı ilə məşğuldur.",
+      "Məhsullar əllə hazırlanır, sifarişlə hazırlanır. İstənilən ünvana çatdırılma mümkündür. Sifariş verməyə tələsin.",
+      "By Naghiyev məhsulları ilə evinizə estetik toxunuş verə və enerjini dəyişə bilərsiniz!"
+    ]
+  }
+}
