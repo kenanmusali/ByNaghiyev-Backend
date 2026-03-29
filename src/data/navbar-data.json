@@ -1,0 +1,60 @@
+{
+  "logos": {
+    "logo": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/logo.svg",
+    "logoText": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/logo-text.svg"
+  },
+  "icons": {
+    "menu": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/menu.svg",
+    "close": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/close.svg",
+    "azFlag": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/az_i18n.png",
+    "enFlag": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/en_i18n.png",
+    "autoTheme": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/auto_theme.svg",
+    "lightTheme": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/light_theme.svg",
+    "darkTheme": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/dark_theme.svg",
+    "bgPattern": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/bg-pattern.svg"
+  },
+  "navItems": [
+    {
+      "id": 1,
+      "label": "About us",
+      "sectionId": "about"
+    },
+    {
+      "id": 2,
+      "label": "Products",
+      "sectionId": "products"
+    },
+    {
+      "id": 3,
+      "label": "Blogs",
+      "sectionId": "blogs"
+    },
+    {
+      "id": 4,
+      "label": "Socials",
+      "sectionId": "socials"
+    }
+  ],
+  "mobileNavItems": [
+    {
+      "id": 1,
+      "label": "About us",
+      "sectionId": "about"
+    },
+    {
+      "id": 2,
+      "label": "Products",
+      "sectionId": "products"
+    },
+    {
+      "id": 3,
+      "label": "Blogs",
+      "sectionId": "blogs"
+    },
+    {
+      "id": 4,
+      "label": "Socials",
+      "sectionId": "socials"
+    }
+  ]
+}

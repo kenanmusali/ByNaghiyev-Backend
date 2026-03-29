@@ -1,0 +1,55 @@
+{
+  "logo": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/logo.svg",
+  "description": {
+    "en": "Turn your home into work of art. The right address for aesthetic touch and positive energy",
+    "az": "Evinizi sənət əsərinə çevirin. Estetik toxunuş və pozitiv enerji üçün doğru ünvan"
+  },
+  "socialsTitle": {
+    "en": "Socials",
+    "az": "Sosial Şəbəkələr"
+  },
+  "newsletterTitle": {
+    "en": "Newsletter",
+    "az": "Xəbər Bülleteni"
+  },
+  "emailPlaceholder": {
+    "en": "Email address",
+    "az": "Email ünvanı"
+  },
+  "subscribeText": {
+    "en": "Subscribe",
+    "az": "Abunə Ol"
+  },
+  "copyrightText": {
+    "en": "© 2026, By Naghiyev, All right reserved",
+    "az": "© 2026, By Naghiyev, Bütün hüquqlar qorunur"
+  },
+  "termsText": "Terms of use  |  Privacy Policy",
+  "socials": [
+    {
+      "name": "eBay",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/ebayIcon.svg",
+      "link": "https://www.ebay.com"
+    },
+    {
+      "name": "Instagram",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagramIcon.svg",
+      "link": "https://www.instagram.com"
+    },
+    {
+      "name": "X (Twitter)",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/xIcon.svg",
+      "link": "https://www.x.com"
+    },
+    {
+      "name": "WhatsApp",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/whatsaapIcon.svg",
+      "link": "https://www.whatsapp.com"
+    },
+    {
+      "name": "YouTube",
+      "icon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/youtubeIcon.svg",
+      "link": "https://www.youtube.com"
+    }
+  ]
+}
