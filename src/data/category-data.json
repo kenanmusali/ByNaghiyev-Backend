@@ -6,7 +6,7 @@
   "categories": [
     {
       "id": 1,
-      "icon": "Items1Svg",
+      "icon": "../../public/assets/svg/volunteer_activism.svg",
       "name": {
         "en": "Hand Made",
         "az": "Əl İşi"
@@ -18,7 +18,7 @@
     },
     {
       "id": 2,
-      "icon": "Items2Svg",
+      "icon": "../../public/assets/svg/deployed_code.svg",
       "name": {
         "en": "Premium Materials",
         "az": "Premium Materiallar"
@@ -30,7 +30,7 @@
     },
     {
       "id": 3,
-      "icon": "Items3Svg",
+      "icon": "../../public/assets/svg/asterisk.svg",
       "name": {
         "en": "Modern Design",
         "az": "Müasir Dizayn"
@@ -42,7 +42,7 @@
     },
     {
       "id": 4,
-      "icon": "Items4Svg",
+      "icon": "../../public/assets/svg/psychiatry.svg",
       "name": {
         "en": "Eco Conscious",
         "az": "Eko Şüurlu"
