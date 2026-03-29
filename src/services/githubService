@@ -1,156 +1,160 @@
-/**
- * githubService.js - Works with individual JSON files
- */
+// githubService.js
 
-const TOKEN = import.meta.env.VITE_GITHUB_TOKEN || '';
-const OWNER = import.meta.env.VITE_GITHUB_OWNER || 'By-Naghiyev';
-const REPO = import.meta.env.VITE_GITHUB_REPO || 'Frontend';
+const TOKEN  = import.meta.env.VITE_GITHUB_TOKEN || '';
+const OWNER  = import.meta.env.VITE_GITHUB_OWNER || 'kenanmusali';
+const REPO   = import.meta.env.VITE_GITHUB_REPO || 'ByNaghiyev-Backend';
 const BRANCH = import.meta.env.VITE_GITHUB_BRANCH || 'main';
+
+// ✅ RAW for reading (no CORS issues)
 const RAW_BASE = `https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}`;
 
-// Individual data file paths (NOT a combined file)
+// ✅ API for writing
+const API_BASE = `https://api.github.com/repos/${OWNER}/${REPO}/contents`;
+
+// ✅ FIXED paths (NO ../)
 const DATA_FILES = {
-  navbar: '../data/navbar-data.json',
-  header: '../data/header-data.json',
-  about: '../data/about-data.json',
-  category: '../data/category-data.json',
-  products: '../data/product-data.json',
-  blogs: '../data/blog-data.json',
-  footer: '../data/footer-data.json'
+  navbar:   'src/data/navbar-data.json',
+  header:   'src/data/header-data.json',
+  about:    'src/data/about-data.json',
+  category: 'src/data/category-data.json',
+  products: 'src/data/product-data.json',
+  blogs:    'src/data/blog-data.json',
+  footer:   'src/data/footer-data.json',
 };
 
-const ghFetch = (path, opts = {}) =>
-  fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${path}`, {
-    ...opts,
+// ─────────────────────────────────────────────
+// 🔹 FETCH (uses RAW GitHub — no token needed)
+// ─────────────────────────────────────────────
+export const fetchSiteData = async () => {
+  const result = {};
+
+  for (const [key, path] of Object.entries(DATA_FILES)) {
+    try {
+      const url = `${RAW_BASE}/${path}`;
+      console.log('Fetching:', url);
+
+      const res = await fetch(url);
+
+      if (!res.ok) throw new Error(`Failed ${key}`);
+
+      result[key] = await res.json();
+    } catch (err) {
+      console.warn(`Fallback for ${key}:`, err);
+      result[key] = null;
+    }
+  }
+
+  return result;
+};
+
+// ─────────────────────────────────────────────
+// 🔹 INTERNAL: get SHA (needed for updates)
+// ─────────────────────────────────────────────
+const getSHA = async (path) => {
+  const res = await fetch(`${API_BASE}/${path}`, {
+    headers: {
+      Authorization: `token ${TOKEN}`,
+      Accept: 'application/vnd.github+json',
+    },
+  });
+
+  if (!res.ok) {
+    console.warn(`getSHA failed for ${path}:`, res.status);
+    return null; // return null instead of undefined
+  }
+
+  const data = await res.json();
+  return data.sha;
+};
+
+// ─────────────────────────────────────────────
+// 🔹 SAVE ONE FILE
+// ─────────────────────────────────────────────
+const saveSingleFile = async (key, data) => {
+  if (!TOKEN) throw new Error('Missing GitHub token');
+
+  const path = DATA_FILES[key];
+  if (!path) throw new Error(`Unknown key: ${key}`);
+
+  const sha = await getSHA(path);
+
+  const content = btoa(
+    unescape(encodeURIComponent(JSON.stringify(data, null, 2)))
+  );
+
+  const res = await fetch(`${API_BASE}/${path}`, {
+    method: 'PUT',
     headers: {
       Authorization: `token ${TOKEN}`,
       Accept: 'application/vnd.github+json',
       'Content-Type': 'application/json',
-      ...(opts.headers || {}),
     },
-  });
-
-const getSHA = async (path) => {
-  try {
-    const res = await ghFetch(path);
-    if (!res.ok) return undefined;
-    return (await res.json()).sha;
-  } catch {
-    return undefined;
-  }
-};
-
-const fileToBase64 = (file) =>
-  new Promise((resolve, reject) => {
-    const r = new FileReader();
-    r.onload = (e) => resolve(e.target.result.split(',')[1]);
-    r.onerror = reject;
-    r.readAsDataURL(file);
-  });
-
-// Import local fallback data
-import navbarData from '../data/navbar-data.json';
-import headerData from '../data/header-data.json';
-import aboutData from '../data/about-data.json';
-import categoryData from '../data/category-data.json';
-import productData from '../data/product-data.json';
-import blogData from '../data/blog-data.json';
-import footerData from '../data/footer-data.json';
-
-const LOCAL_DATA = {
-  navbar: navbarData,
-  header: headerData,
-  about: aboutData,
-  category: categoryData,
-  products: productData,
-  blogs: blogData,
-  footer: footerData,
-};
-
-/** Fetch all individual data files from GitHub */
-export const fetchSiteData = async () => {
-  if (!TOKEN) {
-    console.warn('No GitHub token, using local data');
-    return LOCAL_DATA;
-  }
-
-  const result = {};
-  
-  for (const [key, path] of Object.entries(DATA_FILES)) {
-    try {
-      const res = await ghFetch(path);
-      if (res.ok) {
-        const { content } = await res.json();
-        result[key] = JSON.parse(atob(content.replace(/\n/g, '')));
-      } else {
-        console.warn(`Failed to fetch ${key}, using local fallback`);
-        result[key] = LOCAL_DATA[key];
-      }
-    } catch (err) {
-      console.warn(`Error fetching ${key}:`, err);
-      result[key] = LOCAL_DATA[key];
-    }
-  }
-  
-  return result;
-};
-
-/** Save individual data file to GitHub */
-const saveSingleFile = async (key, data) => {
-  const path = DATA_FILES[key];
-  if (!path) throw new Error(`Unknown data key: ${key}`);
-  
-  const sha = await getSHA(path);
-  const content = btoa(unescape(encodeURIComponent(JSON.stringify(data, null, 2))));
-  
-  const res = await ghFetch(path, {
-    method: 'PUT',
     body: JSON.stringify({
-      message: `Admin: update ${key} [${new Date().toISOString()}]`,
+      message: `Update ${key} (${new Date().toISOString()})`,
       content,
-      ...(sha ? { sha } : {}),
+      ...(sha && { sha }),
     }),
   });
-  
+
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || `Save failed for ${key} (${res.status})`);
+    throw new Error(err.message || `Save failed (${res.status})`);
   }
-  
+
   return res.json();
 };
 
-/** Save all data files to GitHub */
+// ─────────────────────────────────────────────
+// 🔹 SAVE ALL
+// ─────────────────────────────────────────────
 export const saveSiteData = async (data) => {
-  if (!TOKEN) throw new Error('VITE_GITHUB_TOKEN is not set');
-  
-  const saves = [];
+  const promises = [];
+
   for (const [key, value] of Object.entries(data)) {
     if (DATA_FILES[key]) {
-      saves.push(saveSingleFile(key, value));
+      promises.push(saveSingleFile(key, value));
     }
   }
-  
-  await Promise.all(saves);
+
+  await Promise.all(promises);
   return true;
 };
 
-/** Upload image */
-export const uploadImage = async (file, relativePath) => {
-  if (!TOKEN) throw new Error('VITE_GITHUB_TOKEN is not set');
-  const base64 = await fileToBase64(file);
-  const sha = await getSHA(relativePath);
-  const res = await ghFetch(relativePath, {
+// ─────────────────────────────────────────────
+// 🔹 UPLOAD IMAGE
+// ─────────────────────────────────────────────
+export const uploadImage = async (file, path) => {
+  if (!TOKEN) throw new Error('Missing GitHub token');
+
+  const toBase64 = (file) =>
+    new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(r.result.split(',')[1]);
+      r.onerror = reject;
+      r.readAsDataURL(file);
+    });
+
+  const base64 = await toBase64(file);
+  const sha = await getSHA(path);
+
+  const res = await fetch(`${API_BASE}/${path}`, {
     method: 'PUT',
+    headers: {
+      Authorization: `token ${TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
-      message: `Upload: ${relativePath}`,
+      message: `Upload ${path}`,
       content: base64,
-      ...(sha ? { sha } : {}),
+      ...(sha && { sha }),
     }),
   });
+
   if (!res.ok) {
     const err = await res.json().catch(() => ({}));
-    throw new Error(err.message || `Upload failed (${res.status})`);
+    throw new Error(err.message || 'Upload failed');
   }
-  return `${RAW_BASE}/${relativePath}`;
+
+  return `${RAW_BASE}/${path}`;
 };
