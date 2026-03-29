@@ -105,18 +105,17 @@ const saveSingleFile = async (key, data) => {
 };
 
 // ─────────────────────────────────────────────
-// 🔹 SAVE ALL
+// 🔹 SAVE ALL (FIXED: Sequential saving)
 // ─────────────────────────────────────────────
 export const saveSiteData = async (data) => {
-  const promises = [];
-
+  // Loop through and await each save individually
   for (const [key, value] of Object.entries(data)) {
     if (DATA_FILES[key]) {
-      promises.push(saveSingleFile(key, value));
+      // Wait for this file to finish committing before moving to the next
+      await saveSingleFile(key, value); 
     }
   }
 
-  await Promise.all(promises);
   return true;
 };
 
