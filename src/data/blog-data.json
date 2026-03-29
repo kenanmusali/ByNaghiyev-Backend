@@ -28,7 +28,11 @@
           "en": "The Art of Natural Scented Candles",
           "az": "Təbii Ətirli Şamların Sənəti"
         },
-        "images": ["https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"],
+        "images": [
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
+        ],
         "paragraphs": {
           "en": [
             "Discover the enchanting world of natural scented candles, where each flame tells a story of craftsmanship and nature's finest ingredients. Our hand-poured candles are created using only the highest quality natural waxes, including soy, coconut, and beeswax, ensuring a clean and long-lasting burn.",
@@ -63,7 +67,11 @@
           "en": "Aromatherapy Benefits",
           "az": "Aromaterapiyanın Faydaları"
         },
-        "images": ["https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"],
+        "images": [
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
+        ],
         "paragraphs": {
           "en": [
             "Aromatherapy has been practiced for thousands of years, harnessing the power of plant essences to promote physical and emotional well-being.",
@@ -98,7 +106,11 @@
           "en": "The Art of Natural Scented Candles",
           "az": "Təbii Ətirli Şamların Sənəti"
         },
-        "images": ["https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"],
+        "images": [
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
+        ],
         "paragraphs": {
           "en": [
             "Discover the enchanting world of natural scented candles, where each flame tells a story of craftsmanship and nature's finest ingredients. Our hand-poured candles are created using only the highest quality natural waxes, including soy, coconut, and beeswax, ensuring a clean and long-lasting burn.",
@@ -133,7 +145,11 @@
           "en": "Aromatherapy Benefits",
           "az": "Aromaterapiyanın Faydaları"
         },
-        "images": ["https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png", "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"],
+        "images": [
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
+        ],
         "paragraphs": {
           "en": [
             "Aromatherapy has been practiced for thousands of years, harnessing the power of plant essences to promote physical and emotional well-being.",
