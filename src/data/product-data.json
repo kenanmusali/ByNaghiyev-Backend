@@ -126,7 +126,8 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "hidden": true
     }
   ]
 }
