@@ -73,9 +73,19 @@ const iconModules = {
   wi: () => import('react-icons/wi'),
 };
 
-// Function to extract SVG path from react-icon component
-const extractSvgPath = (iconValue) => {
-  // Common SVG paths for popular icons
+// Function to convert icon to SVG file
+const iconToSVGFile = (iconValue, svgPath) => {
+  const fileName = `${iconValue.replace(/\./g, '_')}.svg`;
+  const svgContent = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1F4A44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="${svgPath}"/>
+</svg>`;
+  
+  return new File([svgContent], fileName, { type: 'image/svg+xml' });
+};
+
+// SVG path mapping (you can add more paths as needed)
+const getSvgPath = (iconValue) => {
   const pathMap = {
     'bs.BsBookmarkDash': 'M4 2a2 2 0 0 0-2 2v14l6-3 6 3V4a2 2 0 0 0-2-2H4zm0 2h8v12l-4-2-4 2V4zm5 3v2h-2v2h2v2h2V9h2V7h-2V5h-2z',
     'bs.BsBookmark': 'M4 2a2 2 0 0 0-2 2v14l6-3 6 3V4a2 2 0 0 0-2-2H4zm0 2h8v12l-4-2-4 2V4z',
@@ -90,14 +100,13 @@ const extractSvgPath = (iconValue) => {
   return pathMap[iconValue] || 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5';
 };
 
-const ReactIconPicker = ({ value, onChange, categoryId }) => {
+const ReactIconPicker = ({ value, onChange }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [allIcons, setAllIcons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(200);
   const [selectedIcon, setSelectedIcon] = useState(null);
-  const [uploading, setUploading] = useState(false);
-  const [uploadSuccess, setUploadSuccess] = useState(false);
+  const [showUploader, setShowUploader] = useState(false);
   
   // Load ALL icons dynamically
   useEffect(() => {
@@ -139,7 +148,7 @@ const ReactIconPicker = ({ value, onChange, categoryId }) => {
   
   // Find current selected icon component
   let CurrentIcon = null;
-  if (value && !value.startsWith('http')) {
+  if (value && !value.startsWith('http') && !value.startsWith('/assets')) {
     const matchingIcon = allIcons.find(icon => icon.value === value);
     if (matchingIcon) {
       CurrentIcon = matchingIcon.component;
@@ -149,55 +158,19 @@ const ReactIconPicker = ({ value, onChange, categoryId }) => {
   // Handle icon selection
   const handleIconClick = (icon) => {
     setSelectedIcon(icon);
-    setUploadSuccess(false);
+    setShowUploader(true);
   };
   
-  // Handle upload to server
-  const handleReplace = async () => {
-    if (!selectedIcon) return;
-    
-    setUploading(true);
-    try {
-      const fileName = `${selectedIcon.value.replace(/\./g, '_')}.svg`;
-      const svgPath = extractSvgPath(selectedIcon.value);
-      
-      const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1F4A44" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="${svgPath}"/>
-      </svg>`;
-      
-      // Create form data
-      const formData = new FormData();
-      const blob = new Blob([svgContent], { type: 'image/svg+xml' });
-      formData.append('file', blob, fileName);
-      formData.append('folder', 'svg/category');
-      
-      // Send to your backend
-      const response = await fetch('/api/upload-icon', {
-        method: 'POST',
-        body: formData,
-      });
-      
-      if (response.ok) {
-        const data = await response.json();
-        const uploadedUrl = `https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/category/${fileName}`;
-        onChange(uploadedUrl);
-        setUploadSuccess(true);
-        setTimeout(() => {
-          setSelectedIcon(null);
-          setUploadSuccess(false);
-        }, 2000);
-      }
-    } catch (error) {
-      console.error('Upload failed:', error);
-      alert('Failed to upload icon');
-    } finally {
-      setUploading(false);
-    }
+  // Handle the upload from ImageUploader
+  const handleUploadComplete = (uploadedUrl) => {
+    onChange(uploadedUrl);
+    setSelectedIcon(null);
+    setShowUploader(false);
   };
   
   const handleCancel = () => {
     setSelectedIcon(null);
-    setUploadSuccess(false);
+    setShowUploader(false);
   };
   
   return (
@@ -226,7 +199,7 @@ const ReactIconPicker = ({ value, onChange, categoryId }) => {
         }}>
           {CurrentIcon ? (
             <CurrentIcon style={{ fontSize: 48, color: '#1F4A44' }} />
-          ) : value && value.startsWith('http') ? (
+          ) : value && (value.startsWith('http') || value.startsWith('/assets')) ? (
             <img src={value} alt="icon" style={{ width: 48, height: 48 }} />
           ) : (
             <span style={{ fontSize: 48, color: '#1F4A44' }}>🎨</span>
@@ -234,29 +207,25 @@ const ReactIconPicker = ({ value, onChange, categoryId }) => {
         </div>
         <div>
           <div style={{ fontSize: 13, fontWeight: 500, color: '#1F4A44' }}>
-            {value ? (value.startsWith('http') ? 'Custom Icon' : value.split('.')[1]) : 'No icon selected'}
+            {value ? (value.startsWith('http') || value.startsWith('/assets') ? 'Custom Icon' : value.split('.')[1]) : 'No icon selected'}
           </div>
           <div style={{ fontSize: 11, color: '#6b7280' }}>
-            Click any icon below to select, then click Replace
+            Click any icon below to select, then upload to GitHub
           </div>
         </div>
       </div>
       
-      {/* Replace Button - shows when icon is selected */}
-      {selectedIcon && (
+      {/* Uploader Section - shows when icon is selected */}
+      {showUploader && selectedIcon && (
         <div style={{ 
           marginBottom: 16, 
-          display: 'flex', 
-          gap: 12,
           padding: 16,
-          background: 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)',
-          border: '2px solid #22c55e',
+          background: '#eff6ff',
+          border: '2px solid #3b82f6',
           borderRadius: 12,
-          alignItems: 'center',
-          justifyContent: 'space-between',
           animation: 'slideDown 0.3s ease',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
             <div style={{
               width: 48,
               height: 48,
@@ -265,62 +234,53 @@ const ReactIconPicker = ({ value, onChange, categoryId }) => {
               justifyContent: 'center',
               background: 'white',
               borderRadius: 8,
-              border: '1px solid #86efac',
+              border: '1px solid #93c5fd',
             }}>
               <selectedIcon.component style={{ fontSize: 32, color: '#1F4A44' }} />
             </div>
             <div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#166534' }}>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1e40af' }}>
                 {selectedIcon.name}
               </div>
-              <div style={{ fontSize: 11, color: '#15803d', marginTop: 2 }}>
-                Will save to: svg/category/{selectedIcon.value.replace(/\./g, '_')}.svg
+              <div style={{ fontSize: 11, color: '#3b82f6' }}>
+                File: {selectedIcon.value.replace(/\./g, '_')}.svg
               </div>
             </div>
-          </div>
-          <div style={{ display: 'flex', gap: 8 }}>
             <button
               onClick={handleCancel}
-              disabled={uploading}
               style={{
-                padding: '8px 16px',
-                background: 'white',
-                color: '#6b7280',
-                border: '1px solid #d1d5db',
+                marginLeft: 'auto',
+                padding: '4px 12px',
+                background: '#ef4444',
+                color: 'white',
+                border: 'none',
                 borderRadius: 6,
-                cursor: uploading ? 'not-allowed' : 'pointer',
-                fontSize: 13,
-                fontWeight: 500,
+                cursor: 'pointer',
+                fontSize: 12,
               }}
             >
               Cancel
             </button>
-            <button
-              onClick={handleReplace}
-              disabled={uploading}
-              style={{
-                padding: '8px 20px',
-                background: '#22c55e',
-                color: 'white',
-                border: 'none',
-                borderRadius: 6,
-                cursor: uploading ? 'not-allowed' : 'pointer',
-                fontSize: 13,
-                fontWeight: 600,
-                display: 'flex',
-                alignItems: 'center',
-                gap: 6,
-                opacity: uploading ? 0.6 : 1,
-              }}
-            >
-              {uploading ? (
-                <>⏳ Uploading...</>
-              ) : uploadSuccess ? (
-                <>✓ Replaced!</>
-              ) : (
-                <>🔄 Replace Icon</>
-              )}
-            </button>
+          </div>
+          
+          {/* Use your existing ImageUploader component */}
+          <ImageUploader
+            label="Upload Icon to GitHub"
+            value=""
+            folder="svg/category"
+            onChange={handleUploadComplete}
+          />
+          
+          <div style={{ 
+            marginTop: 12, 
+            fontSize: 11, 
+            color: '#6b7280',
+            padding: 8,
+            background: '#f9fafb',
+            borderRadius: 6,
+          }}>
+            💡 Tip: Click "Choose file" above and select the SVG file you want to upload.
+            The file will be automatically uploaded to GitHub and the icon will be updated.
           </div>
         </div>
       )}
@@ -545,10 +505,9 @@ const CategoryEditor = ({ data, onChange }) => {
                 onChange={v => updateCat(idx, { icon: v })}
               />
 
-              {/* React Icon Picker with Replace Button */}
+              {/* React Icon Picker - uses your existing ImageUploader */}
               <ReactIconPicker
                 value={c.icon}
-                categoryId={c.id}
                 onChange={(newIconUrl) => updateCat(idx, { icon: newIconUrl })}
               />
 
