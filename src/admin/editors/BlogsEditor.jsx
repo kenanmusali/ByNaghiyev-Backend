@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import ImageUploader from '../ImageUploader';
 
-const Sec = ({ title, children }) => (
-  <div style={{ marginBottom: 28 }}>
-    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--a-muted)', paddingBottom: 8, marginBottom: 14, borderBottom: '1px solid var(--a-border)' }}>
-      {title}
+const Sec = ({ title, collapsible, children }) => {
+  const [open, setOpen] = useState(!collapsible);
+  return (
+    <div style={{ marginBottom: 28 }}>
+      <div
+        onClick={() => collapsible && setOpen(o => !o)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          fontSize: 11, fontWeight: 700, textTransform: 'uppercase',
+          letterSpacing: '0.07em', color: 'var(--a-muted)',
+          paddingBottom: 8, marginBottom: open ? 14 : 0,
+          borderBottom: '1px solid var(--a-border)',
+          cursor: collapsible ? 'pointer' : 'default',
+        }}
+      >
+        {title}
+        {collapsible && <span style={{ fontSize: 16, lineHeight: 1 }}>{open ? '▾' : '▸'}</span>}
+      </div>
+      {open && children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 const Card = ({ children }) => (
   <div style={{ background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 8, padding: '16px 18px', marginBottom: 12 }}>
@@ -128,7 +142,7 @@ const BlogsEditor = ({ data, onChange }) => {
   return (
     <div>
       {/* Section titles */}
-      <Sec title="Labels">
+      <Sec title="Labels" collapsible>
         <div style={{ marginBottom: 12 }}>
           <Lbl>Section Title</Lbl>
           <Grid2>
@@ -146,7 +160,7 @@ const BlogsEditor = ({ data, onChange }) => {
       </Sec>
 
       {/* Blogs */}
-      <Sec title={`Blog Posts (${blogs.length})`}>
+      <Sec title={`Blog Posts (${blogs.length})`} collapsible>
         {blogs.map((b, idx) => {
           const isOpen = expanded === idx;
           const exp    = b.expandedContent || {};

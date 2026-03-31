@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageUploader from '../ImageUploader';
 
-const Sec = ({ title, children }) => (
-  <div style={{ marginBottom: 28 }}>
-    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--a-muted)', paddingBottom: 8, marginBottom: 14, borderBottom: '1px solid var(--a-border)' }}>
-      {title}
+const Sec = ({ title, collapsible, children }) => {
+  const [open, setOpen] = useState(!collapsible);
+  return (
+    <div style={{ marginBottom: 28 }}>
+      <div
+        onClick={() => collapsible && setOpen(o => !o)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          fontSize: 11, fontWeight: 700, textTransform: 'uppercase',
+          letterSpacing: '0.07em', color: 'var(--a-muted)',
+          paddingBottom: 8, marginBottom: open ? 14 : 0,
+          borderBottom: '1px solid var(--a-border)',
+          cursor: collapsible ? 'pointer' : 'default',
+        }}
+      >
+        {title}
+        {collapsible && <span style={{ fontSize: 16, lineHeight: 1 }}>{open ? '▾' : '▸'}</span>}
+      </div>
+      {open && children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 const Card = ({ children, style }) => (
   <div style={{ background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 8, padding: '16px 18px', marginBottom: 12, ...style }}>
@@ -59,7 +73,7 @@ const CategoryEditor = ({ data, onChange }) => {
   return (
     <div>
       {/* Section title */}
-      <Sec title="Section Title">
+      <Sec title="Section Title" collapsible>
         <Grid2>
           <div>
             <Lbl>🇬🇧 EN</Lbl>
@@ -73,7 +87,7 @@ const CategoryEditor = ({ data, onChange }) => {
       </Sec>
 
       {/* Categories */}
-      <Sec title={`Categories (${cats.length})`}>
+      <Sec title={`Categories (${cats.length})`} collapsible>
         {cats.map((c, idx) => (
           <Card key={c.id ?? idx}>
             {/* Header row */}

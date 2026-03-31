@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageUploader from '../ImageUploader';
 
-const Sec = ({ title, children }) => (
-  <div style={{ marginBottom: 28 }}>
-    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--a-muted)', paddingBottom: 8, marginBottom: 14, borderBottom: '1px solid var(--a-border)' }}>
-      {title}
+const Sec = ({ title, collapsible, children }) => {
+  const [open, setOpen] = useState(!collapsible);
+  return (
+    <div style={{ marginBottom: 28 }}>
+      <div
+        onClick={() => collapsible && setOpen(o => !o)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          fontSize: 11, fontWeight: 700, textTransform: 'uppercase',
+          letterSpacing: '0.07em', color: 'var(--a-muted)',
+          paddingBottom: 8, marginBottom: open ? 14 : 0,
+          borderBottom: '1px solid var(--a-border)',
+          cursor: collapsible ? 'pointer' : 'default',
+        }}
+      >
+        {title}
+        {collapsible && <span style={{ fontSize: 16, lineHeight: 1 }}>{open ? '▾' : '▸'}</span>}
+      </div>
+      {open && children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 const Card = ({ children }) => (
   <div style={{ background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 8, padding: '14px 16px', marginBottom: 10 }}>
@@ -65,12 +79,12 @@ const FooterEditor = ({ data, onChange }) => {
   return (
     <div>
       {/* Logo */}
-      <Sec title="Logo">
+      <Sec title="Logo" collapsible>
         <ImageUploader label="Footer Logo" value={ft.logo} folder="svg" onChange={v => upd({ logo: v })} />
       </Sec>
 
       {/* Text fields */}
-      <Sec title="Text Content">
+      <Sec title="Text Content" collapsible>
         <BiArea
           label="Description"
           enVal={ft.description?.en} azVal={ft.description?.az}
@@ -108,7 +122,7 @@ const FooterEditor = ({ data, onChange }) => {
       </Sec>
 
       {/* Social links */}
-      <Sec title={`Social Links (${socials.length})`}>
+      <Sec title={`Social Links (${socials.length})`} collapsible>
         {socials.map((s, idx) => (
           <Card key={idx}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>

@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageUploader from '../ImageUploader';
 
-const Sec = ({ title, children }) => (
-  <div style={{ marginBottom: 28 }}>
-    <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.07em', color: 'var(--a-muted)', paddingBottom: 8, marginBottom: 14, borderBottom: '1px solid var(--a-border)' }}>
-      {title}
+const Sec = ({ title, collapsible, children }) => {
+  const [open, setOpen] = useState(!collapsible);
+  return (
+    <div style={{ marginBottom: 28 }}>
+      <div
+        onClick={() => collapsible && setOpen(o => !o)}
+        style={{
+          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+          fontSize: 11, fontWeight: 700, textTransform: 'uppercase',
+          letterSpacing: '0.07em', color: 'var(--a-muted)',
+          paddingBottom: 8, marginBottom: open ? 14 : 0,
+          borderBottom: '1px solid var(--a-border)',
+          cursor: collapsible ? 'pointer' : 'default',
+        }}
+      >
+        {title}
+        {collapsible && <span style={{ fontSize: 16, lineHeight: 1 }}>{open ? '▾' : '▸'}</span>}
+      </div>
+      {open && children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 const Card = ({ children }) => (
   <div style={{ background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 8, padding: '14px 16px', marginBottom: 10 }}>
@@ -59,7 +73,7 @@ const AboutEditor = ({ data, onChange }) => {
   return (
     <div>
       {/* Section title */}
-      <Sec title="Section Title">
+      <Sec title="Section Title" collapsible>
         <Grid2>
           <div>
             <Lbl>🇬🇧 EN</Lbl>
@@ -73,12 +87,12 @@ const AboutEditor = ({ data, onChange }) => {
       </Sec>
 
       {/* Logo text SVG */}
-      <Sec title="Logo Text SVG">
+      <Sec title="Logo Text SVG" collapsible>
         <ImageUploader label="Logo Text SVG" value={abt.logoTextSvg} folder="svg" onChange={v => upd({ logoTextSvg: v })} />
       </Sec>
 
       {/* Images */}
-      <Sec title={`Images (${images.length})`}>
+      <Sec title={`Images (${images.length})`} collapsible>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 14 }}>
           {images.map((src, idx) => (
             <Card key={idx}>
@@ -96,7 +110,7 @@ const AboutEditor = ({ data, onChange }) => {
       </Sec>
 
       {/* Text paragraphs */}
-      <Sec title={`Text Paragraphs (${paraCount})`}>
+      <Sec title={`Text Paragraphs (${paraCount})`} collapsible>
         <p style={{ fontSize: 12, color: 'var(--a-muted)', marginBottom: 12 }}>
           Paragraphs are paired — each row is the same paragraph in both languages. The first paragraph is typically the brand name prefix.
         </p>
@@ -126,4 +140,4 @@ const AboutEditor = ({ data, onChange }) => {
   );
 };
 
-export default AboutEditor; 
+export default AboutEditor;

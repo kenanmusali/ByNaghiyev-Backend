@@ -79,7 +79,7 @@ const NavbarEditor = ({ data, onChange }) => {
   const NavList = ({ listKey, title }) => {
     const list = nav[listKey] || [];
     return (
-      <Sec title={title}>
+      <Sec title={title} collapsible>
         {list.map((item, idx) => (
           <Card key={item.id ?? idx}>
             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start' }}>
@@ -91,7 +91,7 @@ const NavbarEditor = ({ data, onChange }) => {
                 <Lbl>🇦🇿 AZ Label</Lbl>
                 <input className="adm-input" value={item.label?.az || ''} onChange={e => setLabel(listKey, idx, 'az', e.target.value)} />
               </div>
-              <div style={{ flex: 1, minWidth: 90 }}>
+              <div style={{ flex: 1, minWidth: 90, display: 'none' }}>
                 <Lbl>Section ID</Lbl>
                 <input className="adm-input" value={item.sectionId || ''} onChange={e => setField(listKey, idx, 'sectionId', e.target.value)} placeholder="e.g. about" />
               </div>
@@ -112,10 +112,10 @@ const NavbarEditor = ({ data, onChange }) => {
 
   return (
     <div>
-      <Sec title="Logos">
+      <Sec title="Logos" collapsible>
         <Grid cols={2}>
           <ImageUploader label="Main Logo"   value={logos.logo}     folder="svg" onChange={v => setLogo('logo', v)} />
-          <ImageUploader label="Logo Text"  value={logos.  logoText} folder="svg" onChange={v => setLogo('logoText', v)} />
+          <ImageUploader label="Logo Text"  value={logos.logoText} folder="svg" onChange={v => setLogo('logoText', v)} />
         </Grid>
       </Sec>
 
