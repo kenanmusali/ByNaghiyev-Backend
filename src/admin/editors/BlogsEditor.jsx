@@ -24,8 +24,8 @@ const Sec = ({ title, collapsible, children }) => {
   );
 };
 
-const Card = ({ children }) => (
-  <div style={{ background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 8, padding: '16px 18px', marginBottom: 12 }}>
+const Card = ({ children, style = {} }) => (
+  <div style={{ background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 8, padding: '16px 18px', marginBottom: 12, ...style }}>
     {children}
   </div>
 );
@@ -122,6 +122,11 @@ const BlogsEditor = ({ data, onChange }) => {
   const delExpImg = (idx, imgIdx) =>
     updExpImgs(idx, (blogs[idx]?.expandedContent?.images || []).filter((_, i) => i !== imgIdx));
 
+  const toggleHidden = (idx) => {
+    const blog = blogs[idx];
+    updBlog(idx, { hidden: !blog.hidden });
+  };
+
   const addBlog = () => upd({
     blogs: [...blogs, {
       id: Date.now(),
@@ -129,6 +134,7 @@ const BlogsEditor = ({ data, onChange }) => {
       time: { en: '', az: '' },
       description: { en: '', az: '' },
       image: '',
+      hidden: false,
       expandedContent: {
         title: { en: '', az: '' },
         images: [],
@@ -139,9 +145,13 @@ const BlogsEditor = ({ data, onChange }) => {
 
   const delBlog = (idx) => upd({ blogs: blogs.filter((_, i) => i !== idx) });
 
+  // Filter visible and hidden blogs
+  const visibleBlogs = blogs.filter(b => !b.hidden);
+  const hiddenBlogs = blogs.filter(b => b.hidden);
+
   return (
     <div>
-      {/* Section titles */}
+      {/* Labels */}
       <Sec title="Labels" collapsible>
         <div style={{ marginBottom: 12 }}>
           <Lbl>Section Title</Lbl>
@@ -159,10 +169,11 @@ const BlogsEditor = ({ data, onChange }) => {
         </div>
       </Sec>
 
-      {/* Blogs */}
-      <Sec title={`Blog Posts (${blogs.length})`} collapsible>
-        {blogs.map((b, idx) => {
-          const isOpen = expanded === idx;
+      {/* Visible Blogs */}
+      <Sec title={`Visible Blogs (${visibleBlogs.length})`} collapsible>
+        {visibleBlogs.map((b, idx) => {
+          const originalIdx = blogs.findIndex(blog => blog.id === b.id);
+          const isOpen = expanded === originalIdx;
           const exp    = b.expandedContent || {};
           const paraCount = Math.max((exp.paragraphs?.en || []).length, (exp.paragraphs?.az || []).length);
 
@@ -170,20 +181,29 @@ const BlogsEditor = ({ data, onChange }) => {
             <Card key={b.id ?? idx}>
               {/* Accordion header */}
               <div
-                onClick={() => setExpanded(isOpen ? null : idx)}
+                onClick={() => setExpanded(isOpen ? null : originalIdx)}
                 style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', userSelect: 'none' }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   {b.image && (
                     <img src={b.image} alt="" style={{ width: 36, height: 36, borderRadius: 6, objectFit: 'cover', border: '1px solid var(--a-border)' }} />
                   )}
-                  <span style={{ fontWeight: 600, fontSize: 14 }}>{b.name?.en || `Blog ${idx + 1}`}</span>
+                  <span style={{ fontWeight: 600, fontSize: 14 }}>{b.name?.en || `Blog ${originalIdx + 1}`}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <span style={{ fontSize: 16 }}>{isOpen ? '▾' : '▸'}</span>
                   <button
-                    type="button" onClick={e => { e.stopPropagation(); delBlog(idx); }}
+                    type="button"
+                    onClick={e => { e.stopPropagation(); toggleHidden(originalIdx); }}
+                    style={{ background: 'none', border: 'none', color: 'var(--a-warning,#f59e0b)', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}
+                    title="Hide/Show"
+                  >
+                    {b.hidden ? '☑' : '☐'}
+                  </button>
+                  <button
+                    type="button" onClick={e => { e.stopPropagation(); delBlog(originalIdx); }}
                     style={{ background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 20, lineHeight: 1 }}
+                    title="Delete"
                   >✕</button>
                 </div>
               </div>
@@ -191,16 +211,16 @@ const BlogsEditor = ({ data, onChange }) => {
               {isOpen && (
                 <div style={{ marginTop: 16, borderTop: '1px solid var(--a-border)', paddingTop: 16 }}>
                   {/* Basic fields */}
-                  <BiRow label="Name"        enVal={b.name?.en}        azVal={b.name?.az}        onEn={v => updLang(idx,'name','en',v)}        onAz={v => updLang(idx,'name','az',v)} />
-                  <BiRow label="Date"        enVal={b.time?.en}        azVal={b.time?.az}        onEn={v => updLang(idx,'time','en',v)}        onAz={v => updLang(idx,'time','az',v)} />
-                  <BiRow label="Description" enVal={b.description?.en} azVal={b.description?.az} onEn={v => updLang(idx,'description','en',v)} onAz={v => updLang(idx,'description','az',v)} />
-                  <ImageUploader label="Card Image" value={b.image} folder="img/blog" onChange={v => updBlog(idx, { image: v })} />
+                  <BiRow label="Name"        enVal={b.name?.en}        azVal={b.name?.az}        onEn={v => updLang(originalIdx,'name','en',v)}        onAz={v => updLang(originalIdx,'name','az',v)} />
+                  <BiRow label="Date"        enVal={b.time?.en}        azVal={b.time?.az}        onEn={v => updLang(originalIdx,'time','en',v)}        onAz={v => updLang(originalIdx,'time','az',v)} />
+                  <BiRow label="Description" enVal={b.description?.en} azVal={b.description?.az} onEn={v => updLang(originalIdx,'description','en',v)} onAz={v => updLang(originalIdx,'description','az',v)} />
+                  <ImageUploader label="Card Image" value={b.image} folder="img/blog" onChange={v => updBlog(originalIdx, { image: v })} />
 
                   {/* Expanded content */}
                   <div style={{ marginTop: 16, padding: '14px 16px', background: 'var(--a-surface-2, rgba(0,0,0,0.03))', borderRadius: 8, border: '1px dashed var(--a-border)' }}>
                     <Lbl>Expanded / Read More Content</Lbl>
 
-                    <BiRow label="Expanded Title" enVal={exp.title?.en} azVal={exp.title?.az} onEn={v => updExpTitle(idx,'en',v)} onAz={v => updExpTitle(idx,'az',v)} />
+                    <BiRow label="Expanded Title" enVal={exp.title?.en} azVal={exp.title?.az} onEn={v => updExpTitle(originalIdx,'en',v)} onAz={v => updExpTitle(originalIdx,'az',v)} />
 
                     {/* Expanded images */}
                     <div style={{ marginBottom: 14 }}>
@@ -208,15 +228,15 @@ const BlogsEditor = ({ data, onChange }) => {
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 10 }}>
                         {(exp.images || []).map((src, imgIdx) => (
                           <div key={imgIdx} style={{ position: 'relative', border: '1px solid var(--a-border)', borderRadius: 6, padding: 8, background: 'var(--a-surface)' }}>
-                            <ImageUploader value={src} folder="img/blog" onChange={v => setExpImg(idx, imgIdx, v)} />
+                            <ImageUploader value={src} folder="img/blog" onChange={v => setExpImg(originalIdx, imgIdx, v)} />
                             <button
-                              type="button" onClick={() => delExpImg(idx, imgIdx)}
+                              type="button" onClick={() => delExpImg(originalIdx, imgIdx)}
                               style={{ position: 'absolute', top: 4, right: 4, background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}
                             >✕</button>
                           </div>
                         ))}
                       </div>
-                      <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" style={{ marginTop: 6 }} onClick={() => addExpImg(idx)}>
+                      <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" style={{ marginTop: 6 }} onClick={() => addExpImg(originalIdx)}>
                         + Add image
                       </button>
                     </div>
@@ -227,16 +247,16 @@ const BlogsEditor = ({ data, onChange }) => {
                       <div key={pIdx} style={{ marginBottom: 10, padding: '10px 12px', background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 6 }}>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
                           <span style={{ fontSize: 12, color: 'var(--a-muted)' }}>Paragraph {pIdx + 1}</span>
-                          <button type="button" onClick={() => delExpPara(idx, pIdx)} style={{ background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 16 }}>✕</button>
+                          <button type="button" onClick={() => delExpPara(originalIdx, pIdx)} style={{ background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 16 }}>✕</button>
                         </div>
                         <BiRow
                           enVal={(exp.paragraphs?.en || [])[pIdx]} azVal={(exp.paragraphs?.az || [])[pIdx]}
-                          onEn={v => updExpPara(idx,'en',pIdx,v)} onAz={v => updExpPara(idx,'az',pIdx,v)}
+                          onEn={v => updExpPara(originalIdx,'en',pIdx,v)} onAz={v => updExpPara(originalIdx,'az',pIdx,v)}
                           multiline
                         />
                       </div>
                     ))}
-                    <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" onClick={() => addExpPara(idx)}>
+                    <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" onClick={() => addExpPara(originalIdx)}>
                       + Add paragraph
                     </button>
                   </div>
@@ -250,6 +270,107 @@ const BlogsEditor = ({ data, onChange }) => {
           + Add blog post
         </button>
       </Sec>
+
+      {/* Hidden Blogs Section */}
+      {hiddenBlogs.length > 0 && (
+        <Sec title={`Hidden Blogs (${hiddenBlogs.length})`} collapsible>
+          {hiddenBlogs.map((b, idx) => {
+            const originalIdx = blogs.findIndex(blog => blog.id === b.id);
+            const isOpen = expanded === originalIdx;
+            const exp    = b.expandedContent || {};
+            const paraCount = Math.max((exp.paragraphs?.en || []).length, (exp.paragraphs?.az || []).length);
+
+            return (
+              <Card key={b.id ?? idx} style={{ opacity: 0.7 }}>
+                {/* Accordion header */}
+                <div
+                  onClick={() => setExpanded(isOpen ? null : originalIdx)}
+                  style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', userSelect: 'none' }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    {b.image && (
+                      <img src={b.image} alt="" style={{ width: 36, height: 36, borderRadius: 6, objectFit: 'cover', border: '1px solid var(--a-border)' }} />
+                    )}
+                    <span style={{ fontWeight: 600, fontSize: 14 }}>{b.name?.en || `Blog ${originalIdx + 1}`}</span>
+                    <span style={{ fontSize: 11, color: 'var(--a-danger,#e53e3e)', marginLeft: 8 }}>[HIDDEN]</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                    <span style={{ fontSize: 16 }}>{isOpen ? '▾' : '▸'}</span>
+                    <button
+                      type="button"
+                      onClick={e => { e.stopPropagation(); toggleHidden(originalIdx); }}
+                      style={{ background: 'none', border: 'none', color: 'var(--a-warning,#f59e0b)', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}
+                      title="Show"
+                    >
+                      ☑
+                    </button>
+                    <button
+                      type="button" onClick={e => { e.stopPropagation(); delBlog(originalIdx); }}
+                      style={{ background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 20, lineHeight: 1 }}
+                      title="Delete"
+                    >✕</button>
+                  </div>
+                </div>
+
+                {isOpen && (
+                  <div style={{ marginTop: 16, borderTop: '1px solid var(--a-border)', paddingTop: 16 }}>
+                    {/* Basic fields */}
+                    <BiRow label="Name"        enVal={b.name?.en}        azVal={b.name?.az}        onEn={v => updLang(originalIdx,'name','en',v)}        onAz={v => updLang(originalIdx,'name','az',v)} />
+                    <BiRow label="Date"        enVal={b.time?.en}        azVal={b.time?.az}        onEn={v => updLang(originalIdx,'time','en',v)}        onAz={v => updLang(originalIdx,'time','az',v)} />
+                    <BiRow label="Description" enVal={b.description?.en} azVal={b.description?.az} onEn={v => updLang(originalIdx,'description','en',v)} onAz={v => updLang(originalIdx,'description','az',v)} />
+                    <ImageUploader label="Card Image" value={b.image} folder="img/blog" onChange={v => updBlog(originalIdx, { image: v })} />
+
+                    {/* Expanded content */}
+                    <div style={{ marginTop: 16, padding: '14px 16px', background: 'var(--a-surface-2, rgba(0,0,0,0.03))', borderRadius: 8, border: '1px dashed var(--a-border)' }}>
+                      <Lbl>Expanded / Read More Content</Lbl>
+
+                      <BiRow label="Expanded Title" enVal={exp.title?.en} azVal={exp.title?.az} onEn={v => updExpTitle(originalIdx,'en',v)} onAz={v => updExpTitle(originalIdx,'az',v)} />
+
+                      {/* Expanded images */}
+                      <div style={{ marginBottom: 14 }}>
+                        <Lbl>Expanded Images ({(exp.images || []).length})</Lbl>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 10 }}>
+                          {(exp.images || []).map((src, imgIdx) => (
+                            <div key={imgIdx} style={{ position: 'relative', border: '1px solid var(--a-border)', borderRadius: 6, padding: 8, background: 'var(--a-surface)' }}>
+                              <ImageUploader value={src} folder="img/blog" onChange={v => setExpImg(originalIdx, imgIdx, v)} />
+                              <button
+                                type="button" onClick={() => delExpImg(originalIdx, imgIdx)}
+                                style={{ position: 'absolute', top: 4, right: 4, background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}
+                              >✕</button>
+                            </div>
+                          ))}
+                        </div>
+                        <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" style={{ marginTop: 6 }} onClick={() => addExpImg(originalIdx)}>
+                          + Add image
+                        </button>
+                      </div>
+
+                      {/* Expanded paragraphs */}
+                      <Lbl>Paragraphs ({paraCount})</Lbl>
+                      {Array.from({ length: paraCount }, (_, pIdx) => (
+                        <div key={pIdx} style={{ marginBottom: 10, padding: '10px 12px', background: 'var(--a-surface)', border: '1px solid var(--a-border)', borderRadius: 6 }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                            <span style={{ fontSize: 12, color: 'var(--a-muted)' }}>Paragraph {pIdx + 1}</span>
+                            <button type="button" onClick={() => delExpPara(originalIdx, pIdx)} style={{ background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 16 }}>✕</button>
+                          </div>
+                          <BiRow
+                            enVal={(exp.paragraphs?.en || [])[pIdx]} azVal={(exp.paragraphs?.az || [])[pIdx]}
+                            onEn={v => updExpPara(originalIdx,'en',pIdx,v)} onAz={v => updExpPara(originalIdx,'az',pIdx,v)}
+                            multiline
+                          />
+                        </div>
+                      ))}
+                      <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" onClick={() => addExpPara(originalIdx)}>
+                        + Add paragraph
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </Card>
+            );
+          })}
+        </Sec>
+      )}
     </div>
   );
 };
