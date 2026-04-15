@@ -11,6 +11,30 @@ import FooterEditor   from './editors/FooterEditor';
 
 import LogoSvg from '../../public/assets/svg/logo.svg';
 
+/* ── Hex shade helper (mirrors NavbarEditor) ────────────────────── */
+const adjustHex = (hex, amount) => {
+  const num = parseInt(hex.replace('#', ''), 16);
+  const r = Math.min(255, Math.max(0, (num >> 16) + amount));
+  const g = Math.min(255, Math.max(0, ((num >> 8) & 0xff) + amount));
+  const b = Math.min(255, Math.max(0, (num & 0xff) + amount));
+  return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+};
+
+/* Apply all green-derived CSS variables to the document root */
+const applyGreenVars = (hex) => {
+  if (!hex || !/^#[0-9a-fA-F]{6}$/.test(hex)) return;
+  const root = document.documentElement;
+  /* root.css */
+  root.style.setProperty('--green-color', hex);
+  root.style.setProperty('--green-gradient-primary',
+    `linear-gradient(180deg, ${adjustHex(hex, 30)} 0%, ${hex} 100%)`
+  );
+  /* admin.css */
+  root.style.setProperty('--a-green',       hex);
+  root.style.setProperty('--a-green-dark',  adjustHex(hex, -20));
+  root.style.setProperty('--a-green-light', adjustHex(hex, 30));
+};
+
 /* ── icons ─────────────────────────────────────────────────────────── */
 const Icon = ({ path, size = 17 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" style={{ flexShrink: 0 }}>
@@ -49,8 +73,14 @@ const AdminPanel = ({ initialData }) => {
   const [alert,   setAlert]   = useState(null);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Sync when parent re-provides initialData
-  useEffect(() => { setData(initialData); setDirty(false); }, [initialData]);
+  // Sync when parent re-provides initialData and apply green color
+  useEffect(() => {
+    setData(initialData);
+    setDirty(false);
+    // Apply saved green color so admin panel UI reflects brand color
+    const greenColor = initialData?.navbar?.themeColors?.greenColor;
+    if (greenColor) applyGreenVars(greenColor);
+  }, [initialData]);
 
   // Auto-dismiss alert after 4 s
   useEffect(() => {
@@ -59,7 +89,13 @@ const AdminPanel = ({ initialData }) => {
     return () => clearTimeout(t);
   }, [alert]);
 
-  const handleChange = (newData) => { setData(newData); setDirty(true); };
+  const handleChange = (newData) => {
+    setData(newData);
+    setDirty(true);
+    // Live-update green color while editing
+    const greenColor = newData?.navbar?.themeColors?.greenColor;
+    if (greenColor) applyGreenVars(greenColor);
+  };
 
   const handleSave = async () => {
     setSaving(true);
@@ -77,6 +113,9 @@ const AdminPanel = ({ initialData }) => {
     if (window.confirm('Discard all unsaved changes?')) {
       setData(initialData);
       setDirty(false);
+      // Restore original green on discard
+      const greenColor = initialData?.navbar?.themeColors?.greenColor;
+      if (greenColor) applyGreenVars(greenColor);
     }
   };
 
