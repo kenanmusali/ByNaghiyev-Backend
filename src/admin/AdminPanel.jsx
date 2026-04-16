@@ -189,7 +189,7 @@ const AdminPanel = ({ initialData }) => {
               ? <span className="adm-badge adm-badge-red">Unsaved changes</span>
               : <span className="adm-badge adm-badge-green">Up to date</span>}
             <a
-              href="https://bynaghiyev.vercel.app/"
+              href="https://bynaghiyev.com/"
               target="_blank"
               rel="noopener noreferrer"
               className="adm-btn adm-btn-ghost adm-btn-sm"

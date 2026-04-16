@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { FaEye, FaEyeSlash } from "react-icons/fa"
 import LogoSvg from '../public/assets/svg/logo.svg'
 import bgSvg from '../public/assets/svg/bg-body.svg'
 import "./Login.css"
@@ -11,6 +12,7 @@ const App = () => {
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
+  const [showPassword, setShowPassword] = useState(false)
 
   const handleLogin = async () => {
     if (email === "admin@bynaghiyev.com" && password === "HelloNaghiyev2026") {
@@ -67,15 +69,37 @@ const App = () => {
               disabled={isLoading}
             />
             
-            <input
-              type="password"
-              className="InputField"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
-              disabled={isLoading}
-            />
+            <div style={{ position: "relative" }}>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="InputField"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                onKeyPress={(e) => e.key === 'Enter' && handleLogin()}
+                disabled={isLoading}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  padding: 0,
+                  color: "#ffffff",
+                  mixBlendMode: "difference",
+                  marginRight: "10px"
+                
+                }}
+              >
+                {showPassword ? <FaEyeSlash size={18} /> : <FaEye size={18} />}
+              </button>
+            </div>
             
             {error && <div className="error-message">{error}</div>}
             
