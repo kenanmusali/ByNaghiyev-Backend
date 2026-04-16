@@ -69,6 +69,62 @@ const applyGreenColor = (hex) => {
   root.style.setProperty('--a-green-light', adjustHex(hex, 30));
 };
 
+/* ── NavList (lifted outside NavbarEditor to prevent remount on re-render) ── */
+const NavList = ({ listKey, title, nav, onUpdate }) => {
+  const list = nav[listKey] || [];
+
+  const setLabel = (idx, lang, val) => {
+    const updated = list.map((it, i) =>
+      i !== idx ? it : { ...it, label: { ...it.label, [lang]: val } }
+    );
+    onUpdate({ [listKey]: updated });
+  };
+
+  const setField = (idx, field, val) => {
+    const updated = list.map((it, i) =>
+      i !== idx ? it : { ...it, [field]: val }
+    );
+    onUpdate({ [listKey]: updated });
+  };
+
+  const addItem = () =>
+    onUpdate({
+      [listKey]: [...list, { id: Date.now(), label: { en: 'New Item', az: 'Yeni Element' }, sectionId: '' }],
+    });
+
+  const delItem = (idx) =>
+    onUpdate({ [listKey]: list.filter((_, i) => i !== idx) });
+
+  return (
+    <Sec title={title} collapsible>
+      {list.map((item, idx) => (
+        <Card key={item.id ?? idx}>
+          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start' }}>
+            <div style={{ flex: 1, minWidth: 110 }}>
+              <Lbl>🇬🇧 EN Label</Lbl>
+              <input className="adm-input" value={item.label?.en || ''} onChange={e => setLabel(idx, 'en', e.target.value)} />
+            </div>
+            <div style={{ flex: 1, minWidth: 110 }}>
+              <Lbl>🇦🇿 AZ Label</Lbl>
+              <input className="adm-input" value={item.label?.az || ''} onChange={e => setLabel(idx, 'az', e.target.value)} />
+            </div>
+            <div style={{ flex: 1, minWidth: 90, display: 'none' }}>
+              <Lbl>Section ID</Lbl>
+              <input className="adm-input" value={item.sectionId || ''} onChange={e => setField(idx, 'sectionId', e.target.value)} placeholder="e.g. about" />
+            </div>
+            <button
+              type="button" title="Delete"
+              onClick={() => delItem(idx)}
+              style={{ marginTop: 20, background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 20, lineHeight: 1, flexShrink: 0 }}
+            >✕</button>
+          </div>
+        </Card>
+      ))}
+      <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" onClick={addItem}>+ Add item</button>
+    </Sec>
+  );
+};
+
 /* ── NavbarEditor ───────────────────────────────────────────────────── */
 const NavbarEditor = ({ data, onChange }) => {
   const nav         = data.navbar       || {};
@@ -87,57 +143,6 @@ const NavbarEditor = ({ data, onChange }) => {
   /* logos / icons */
   const setLogo = (k, v) => upd({ logos: { ...logos, [k]: v } });
   const setIcon = (k, v) => upd({ icons: { ...icons, [k]: v } });
-
-  /* nav-item CRUD */
-  const setLabel  = (listKey, idx, lang, val) => {
-    const list = (nav[listKey] || []).map((it, i) =>
-      i !== idx ? it : { ...it, label: { ...it.label, [lang]: val } }
-    );
-    upd({ [listKey]: list });
-  };
-  const setField  = (listKey, idx, field, val) => {
-    const list = (nav[listKey] || []).map((it, i) =>
-      i !== idx ? it : { ...it, [field]: val }
-    );
-    upd({ [listKey]: list });
-  };
-  const addItem   = (listKey) => upd({
-    [listKey]: [...(nav[listKey] || []), { id: Date.now(), label: { en: 'New Item', az: 'Yeni Element' }, sectionId: '' }],
-  });
-  const delItem   = (listKey, idx) =>
-    upd({ [listKey]: (nav[listKey] || []).filter((_, i) => i !== idx) });
-
-  const NavList = ({ listKey, title }) => {
-    const list = nav[listKey] || [];
-    return (
-      <Sec title={title} collapsible>
-        {list.map((item, idx) => (
-          <Card key={item.id ?? idx}>
-            <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'flex-start' }}>
-              <div style={{ flex: 1, minWidth: 110 }}>
-                <Lbl>🇬🇧 EN Label</Lbl>
-                <input className="adm-input" value={item.label?.en || ''} onChange={e => setLabel(listKey, idx, 'en', e.target.value)} />
-              </div>
-              <div style={{ flex: 1, minWidth: 110 }}>
-                <Lbl>🇦🇿 AZ Label</Lbl>
-                <input className="adm-input" value={item.label?.az || ''} onChange={e => setLabel(listKey, idx, 'az', e.target.value)} />
-              </div>
-              <div style={{ flex: 1, minWidth: 90, display: 'none' }}>
-                <Lbl>Section ID</Lbl>
-                <input className="adm-input" value={item.sectionId || ''} onChange={e => setField(listKey, idx, 'sectionId', e.target.value)} placeholder="e.g. about" />
-              </div>
-              <button
-                type="button" title="Delete"
-                onClick={() => delItem(listKey, idx)}
-                style={{ marginTop: 20, background: 'none', border: 'none', color: 'var(--a-danger,#e53e3e)', cursor: 'pointer', fontSize: 20, lineHeight: 1, flexShrink: 0 }}
-              >✕</button>
-            </div>
-          </Card>
-        ))}
-        <button type="button" className="adm-btn adm-btn-ghost adm-btn-sm" onClick={() => addItem(listKey)}>+ Add item</button>
-      </Sec>
-    );
-  };
 
   const iconLabel = {
     menu: 'Menu Icon', close: 'Close Icon', azFlag: 'AZ Flag', enFlag: 'EN Flag',
@@ -257,8 +262,8 @@ const NavbarEditor = ({ data, onChange }) => {
         </Grid>
       </Sec>
 
-      <NavList listKey="navItems"       title="Desktop Navigation Items" />
-      <NavList listKey="mobileNavItems" title="Mobile Navigation Items" />
+      <NavList listKey="navItems"       title="Desktop Navigation Items" nav={nav} onUpdate={upd} />
+      <NavList listKey="mobileNavItems" title="Mobile Navigation Items"  nav={nav} onUpdate={upd} />
     </div>
   );
 };
