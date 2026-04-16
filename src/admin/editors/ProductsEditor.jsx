@@ -80,8 +80,10 @@ const ProductsEditor = ({ data, onChange }) => {
       description: { en: '', az: '' },
       image: '',
       instagramIcon: prod.products?.[0]?.instagramIcon || '',
+      instagramUrl: '',
       ebayIcon:      prod.products?.[0]?.ebayIcon      || '',
-      hidden: false, // Add hidden property
+      ebayUrl: '',
+      hidden: false,
     }],
   });
 
@@ -186,6 +188,31 @@ const ProductsEditor = ({ data, onChange }) => {
                     <ImageUploader label="Instagram Icon (SVG)" value={p.instagramIcon} folder="svg" onChange={v => updateProd(originalIdx, { instagramIcon: v })} />
                     <ImageUploader label="eBay Icon (SVG)"      value={p.ebayIcon}      folder="svg" onChange={v => updateProd(originalIdx, { ebayIcon: v })} />
                   </Grid2>
+                  
+                  {/* URL Links Section - NEW */}
+                  <div style={{ marginTop: 16 }}>
+                    <Lbl>Order Links</Lbl>
+                    <Grid2>
+                      <div>
+                        <Lbl>📸 Instagram URL</Lbl>
+                        <input 
+                          className="adm-input" 
+                          value={p.instagramUrl || ''} 
+                          onChange={e => updateProd(originalIdx, { instagramUrl: e.target.value })}
+                          placeholder="https://instagram.com/..."
+                        />
+                      </div>
+                      <div>
+                        <Lbl>🛒 eBay URL</Lbl>
+                        <input 
+                          className="adm-input" 
+                          value={p.ebayUrl || ''} 
+                          onChange={e => updateProd(originalIdx, { ebayUrl: e.target.value })}
+                          placeholder="https://ebay.com/..."
+                        />
+                      </div>
+                    </Grid2>
+                  </div>
                 </div>
               )}
             </Card>
@@ -261,6 +288,31 @@ const ProductsEditor = ({ data, onChange }) => {
                       <ImageUploader label="Instagram Icon (SVG)" value={p.instagramIcon} folder="svg" onChange={v => updateProd(originalIdx, { instagramIcon: v })} />
                       <ImageUploader label="eBay Icon (SVG)"      value={p.ebayIcon}      folder="svg" onChange={v => updateProd(originalIdx, { ebayIcon: v })} />
                     </Grid2>
+                    
+                    {/* URL Links Section - NEW */}
+                    <div style={{ marginTop: 16 }}>
+                      <Lbl>Order Links</Lbl>
+                      <Grid2>
+                        <div>
+                          <Lbl>📸 Instagram URL</Lbl>
+                          <input 
+                            className="adm-input" 
+                            value={p.instagramUrl || ''} 
+                            onChange={e => updateProd(originalIdx, { instagramUrl: e.target.value })}
+                            placeholder="https://instagram.com/..."
+                          />
+                        </div>
+                        <div>
+                          <Lbl>🛒 eBay URL</Lbl>
+                          <input 
+                            className="adm-input" 
+                            value={p.ebayUrl || ''} 
+                            onChange={e => updateProd(originalIdx, { ebayUrl: e.target.value })}
+                            placeholder="https://ebay.com/..."
+                          />
+                        </div>
+                      </Grid2>
+                    </div>
                   </div>
                 )}
               </Card>

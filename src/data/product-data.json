@@ -28,7 +28,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 2,
@@ -42,7 +44,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 3,
@@ -56,7 +60,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 4,
@@ -70,7 +76,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 5,
@@ -84,7 +92,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 6,
@@ -98,7 +108,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 7,
@@ -112,7 +124,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg"
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": ""
     },
     {
       "id": 8,
@@ -126,7 +140,9 @@
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
       "hidden": true
     }
   ]
