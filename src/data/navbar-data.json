@@ -17,15 +17,71 @@
     "bgPattern": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/bg-pattern.svg"
   },
   "navItems": [
-    { "id": 1, "label": { "en": "About us", "az": "Haqqımızda" }, "sectionId": "about" },
-    { "id": 2, "label": { "en": "Products", "az": "Məhsullar" }, "sectionId": "products" },
-    { "id": 3, "label": { "en": "Blogs", "az": "Bloqlar" }, "sectionId": "blogs" },
-    { "id": 4, "label": { "en": "Socials", "az": "Şəbəkələr" }, "sectionId": "socials" }
+    {
+      "id": 1,
+      "label": {
+        "en": "About us",
+        "az": "Haqqımızda"
+      },
+      "sectionId": "about"
+    },
+    {
+      "id": 2,
+      "label": {
+        "en": "Products",
+        "az": "Məhsullar"
+      },
+      "sectionId": "products"
+    },
+    {
+      "id": 3,
+      "label": {
+        "en": "Blogs",
+        "az": "Bloqlar"
+      },
+      "sectionId": "blogs"
+    },
+    {
+      "id": 4,
+      "label": {
+        "en": "Socials",
+        "az": "Şəbəkələr"
+      },
+      "sectionId": "socials"
+    }
   ],
   "mobileNavItems": [
-    { "id": 1, "label": { "en": "About us", "az": "Haqqımızda" }, "sectionId": "about" },
-    { "id": 2, "label": { "en": "Products", "az": "Məhsullar" }, "sectionId": "products" },
-    { "id": 3, "label": { "en": "Blogs", "az": "Bloqlar" }, "sectionId": "blogs" },
-    { "id": 4, "label": { "en": "Socials", "az": "Sosial Şəbəkələr" }, "sectionId": "socials" }
+    {
+      "id": 1,
+      "label": {
+        "en": "About us",
+        "az": "Haqqımızda"
+      },
+      "sectionId": "about"
+    },
+    {
+      "id": 2,
+      "label": {
+        "en": "Products",
+        "az": "Məhsullar"
+      },
+      "sectionId": "products"
+    },
+    {
+      "id": 3,
+      "label": {
+        "en": "Blogs",
+        "az": "Bloqlar"
+      },
+      "sectionId": "blogs"
+    },
+    {
+      "id": 4,
+      "label": {
+        "en": "Socials",
+        "az": "Sosial Şəbəkələr"
+      },
+      "sectionId": "socials"
+    }
   ]
 }
