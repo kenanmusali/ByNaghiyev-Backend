@@ -19,14 +19,14 @@
     {
       "id": 1,
       "name": {
-        "en": "Scented Candle 1",
-        "az": "Ətirli Şam 1"
+        "en": "Gypsum Vessels & Bubble Candles",
+        "az": "Gips qab və Qabarcıqlı Şamlar"
       },
       "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
+        "en": "Handcrafted with 100% natural wax and eco-friendly gypsum. Designed in neutral, subtle tones for a minimalist aesthetic.",
+        "az": "100% təbii mumdan hazırlanan şamlar və təbii, mülayim tonlarda olan əl işi gips məhsulları. Eviniz üçün minimalist və estetik toxunuş."
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1785823356864_WhatsApp_Image_2026-08-04_at_09.37.34.jpeg",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/svg/1785823272795_WhatsApp_Image_2026-08-04_at_09.37.34.jpeg",
       "instagramUrl": "",
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
