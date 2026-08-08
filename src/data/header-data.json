@@ -1,19 +1,9 @@
 {
   "images": [
     {
-      "id": 1,
-      "src": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/header/1785822208772_WhatsApp_Image_2026-08-04_at_09.37.34.jpeg",
-      "alt": "Header 1"
-    },
-    {
       "id": 2,
       "src": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/header/1785822221828_WhatsApp_Image_2026-06-30_at_15.21.53__1_.jpeg",
       "alt": "Header 2"
-    },
-    {
-      "id": 1774808956387,
-      "src": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/header/1785822233059_WhatsApp_Image_2026-06-30_at_15.21.53.jpeg",
-      "alt": "Header 3"
     }
   ],
   "headerText": {
@@ -23,7 +13,7 @@
     },
     "title": {
       "en": "Transform your home WITH BY NAGHIYEV, Products and change the energy!",
-      "az": ""
+      "az": "NAGHIYEV MƏHSULLARI İLƏ EVİNİZİ DƏYİŞDİRİN VƏ ENERJİNİ DƏYİŞDİRİN!"
     }
   },
   "buttonTexts": {
