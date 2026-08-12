@@ -1,7 +1,7 @@
 {
   "sectionTitle": {
-    "en": "Blogs",
-    "az": "Bloqlar"
+    "en": "Products (main) ",
+    "az": "Məhsullar (əsas)"
   },
   "readMoreText": {
     "en": "Read More",
@@ -63,7 +63,7 @@
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "blob:https://bynaghiyev-admin.vercel.app/c1e5245a-fbbe-4896-b878-8219f75608a7",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521389647_Gemini_Generated_Image_o89q2uo89q2uo89q.png",
       "expandedContent": {
         "title": {
           "en": "Aromatherapy Benefits",
