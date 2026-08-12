@@ -52,18 +52,18 @@
     {
       "id": 2,
       "name": {
-        "en": "Plaster bowl",
-        "az": "Gipsdən hazırlanmış qab"
+        "en": "Decorative plaster vessels",
+        "az": "Gips dekor qablar"
       },
       "time": {
         "en": "02.12.2025",
-        "az": "12.02.2025"
+        "az": ""
       },
       "description": {
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504359968_Gemini_Generated_Image_xj4lehxj4lehxj4l.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521100996_d463f179-e1ce-47e8-8f56-7492da106e0f.jfif",
       "expandedContent": {
         "title": {
           "en": "Aromatherapy Benefits",
