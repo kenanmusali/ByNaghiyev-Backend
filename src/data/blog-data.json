@@ -29,9 +29,11 @@
           "az": "Təbii Ətirli Şamların Sənəti"
         },
         "images": [
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504298562_IMG_3136.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504304801_IMG_3133.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504311282_IMG_3135.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504318093_IMG_3091.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504328197_IMG_3105.JPG.jpeg"
         ],
         "paragraphs": {
           "en": [
@@ -61,16 +63,18 @@
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786503642037_Gemini_Generated_Image_xj4lehxj4lehxj4l.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504359968_Gemini_Generated_Image_xj4lehxj4lehxj4l.png",
       "expandedContent": {
         "title": {
           "en": "Aromatherapy Benefits",
           "az": "Aromaterapiyanın Faydaları"
         },
         "images": [
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504377522_IMG_3098.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504384613_IMG_3109.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504394259_IMG_3077.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504411876_IMG_3089.JPG.jpeg",
+          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504421233_IMG_3123.JPG.jpeg"
         ],
         "paragraphs": {
           "en": [
