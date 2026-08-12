@@ -17,86 +17,6 @@
   },
   "products": [
     {
-      "id": 1,
-      "name": {
-        "en": "Gypsum Vessels & Bubble Candles",
-        "az": "Gips qab və Qabarcıqlı Şamlar"
-      },
-      "description": {
-        "en": "Handcrafted with 100% natural wax and eco-friendly gypsum. Designed in neutral, subtle tones for a minimalist aesthetic.",
-        "az": "100% təbii mumdan hazırlanan şamlar və təbii, mülayim tonlarda olan əl işi gips məhsulları. Eviniz üçün minimalist və estetik toxunuş."
-      },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1785823356864_WhatsApp_Image_2026-08-04_at_09.37.34.jpeg",
-      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "instagramUrl": "https://www.instagram.com/p/DVVhjCXgK3E/",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
-      "ebayUrl": ""
-    },
-    {
-      "id": 2,
-      "name": {
-        "en": "Scented Candle 2",
-        "az": "Ətirli Şam 2"
-      },
-      "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
-      },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
-      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "instagramUrl": "",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
-      "ebayUrl": ""
-    },
-    {
-      "id": 3,
-      "name": {
-        "en": "Scented Candle 3",
-        "az": "Ətirli Şam 3"
-      },
-      "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
-      },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
-      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "instagramUrl": "",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
-      "ebayUrl": ""
-    },
-    {
-      "id": 4,
-      "name": {
-        "en": "Scented Candle 4",
-        "az": "Ətirli Şam 4"
-      },
-      "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
-      },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
-      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "instagramUrl": "",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
-      "ebayUrl": ""
-    },
-    {
-      "id": 5,
-      "name": {
-        "en": "Scented Candle 5",
-        "az": "Ətirli Şam 5"
-      },
-      "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
-      },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/product/product1.png",
-      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
-      "instagramUrl": "",
-      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
-      "ebayUrl": ""
-    },
-    {
       "id": 6,
       "name": {
         "en": "Scented Candle 6",
@@ -144,6 +64,40 @@
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
       "ebayUrl": "",
       "hidden": true
+    },
+    {
+      "id": 1786535724176,
+      "name": {
+        "en": "New Product",
+        "az": "Yeni Məhsul"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
+    },
+    {
+      "id": 1786535734143,
+      "name": {
+        "en": "candle",
+        "az": "Ətirli şam"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1786535745291_sham1.jfif",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
     }
   ]
 }
