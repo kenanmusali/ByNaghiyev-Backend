@@ -22,7 +22,7 @@
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786503631372_Gemini_Generated_Image_2tljz2tljz2tljz2.png",
       "expandedContent": {
         "title": {
           "en": "The Art of Natural Scented Candles",
@@ -50,8 +50,8 @@
     {
       "id": 2,
       "name": {
-        "en": "Scented Candle 2",
-        "az": "Ətirli Şam 2"
+        "en": "Plaster bowl",
+        "az": "Gipsdən hazırlanmış qab"
       },
       "time": {
         "en": "02.12.2025",
@@ -61,7 +61,7 @@
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786503642037_Gemini_Generated_Image_xj4lehxj4lehxj4l.png",
       "expandedContent": {
         "title": {
           "en": "Aromatherapy Benefits",
@@ -89,8 +89,8 @@
     {
       "id": 3,
       "name": {
-        "en": "Scented Candle 1",
-        "az": "Ətirli Şam 1"
+        "en": "Ceramic bowl",
+        "az": "Keramikadan hazırlanmış qab"
       },
       "time": {
         "en": "02.12.2025",
@@ -100,7 +100,7 @@
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786503863709_Gemini_Generated_Image_n02ekrn02ekrn02e.png",
       "expandedContent": {
         "title": {
           "en": "The Art of Natural Scented Candles",
@@ -128,8 +128,8 @@
     {
       "id": 4,
       "name": {
-        "en": "Scented Candle 2",
-        "az": "Ətirli Şam 2"
+        "en": "Products made of epoxy",
+        "az": "Epoxy dən hazırlanmış məhsullar"
       },
       "time": {
         "en": "02.12.2025",
@@ -139,7 +139,7 @@
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786503878903_Gemini_Generated_Image_dx9rz3dx9rz3dx9r.png",
       "expandedContent": {
         "title": {
           "en": "Aromatherapy Benefits",
