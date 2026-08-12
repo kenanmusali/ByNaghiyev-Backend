@@ -133,17 +133,17 @@
       "id": 4,
       "name": {
         "en": "Products made of epoxy",
-        "az": "Epoxy dən hazırlanmış məhsullar"
+        "az": "Epoxy "
       },
       "time": {
-        "en": "02.12.2025",
-        "az": "12.02.2025"
+        "en": "",
+        "az": ""
       },
       "description": {
         "en": "Natural Waxes & Essential Oils",
         "az": "Təbii Mumlar & Efir Yağları"
       },
-      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786503878903_Gemini_Generated_Image_dx9rz3dx9rz3dx9r.png",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521965088_967e868e-7528-4219-b4fa-859f2cabdfc4.jfif",
       "expandedContent": {
         "title": {
           "en": "Aromatherapy Benefits",
