@@ -19,14 +19,14 @@
     {
       "id": 1786535724176,
       "name": {
-        "en": "New Product",
-        "az": "Yeni Məhsul"
+        "en": "wavy candle",
+        "az": "Dalğalı şam"
       },
       "description": {
         "en": "",
         "az": ""
       },
-      "image": "",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1786536535757_sham4.jfif",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
       "instagramUrl": "",
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
