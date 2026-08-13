@@ -134,6 +134,23 @@
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
       "ebayUrl": "",
       "hidden": false
+    },
+    {
+      "id": 1786630712844,
+      "name": {
+        "en": "Moai candle ",
+        "az": "Moai "
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1786630724140_870.png",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
     }
   ]
 }
