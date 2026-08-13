@@ -189,14 +189,14 @@
     {
       "id": 1786631650374,
       "name": {
-        "en": "New Product",
-        "az": "Yeni Məhsul"
+        "en": "Decor ",
+        "az": "Dekorativ "
       },
       "description": {
         "en": "",
         "az": ""
       },
-      "image": "",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1786631716484_874.png",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
       "instagramUrl": "",
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
