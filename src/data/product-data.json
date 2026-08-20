@@ -253,6 +253,23 @@
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
       "ebayUrl": "",
       "hidden": false
+    },
+    {
+      "id": 1787228906759,
+      "name": {
+        "en": "Gips qablar",
+        "az": "Yeni Məhsul"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "https://drive.google.com/drive/folders/1xvJxf9kyKr4H6yzqOqRU4GDke6uCR7ZN?usp=sharing",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
     }
   ]
 }
