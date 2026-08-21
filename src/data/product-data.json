@@ -270,6 +270,40 @@
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
       "ebayUrl": "",
       "hidden": false
+    },
+    {
+      "id": 1787309537988,
+      "name": {
+        "en": "New Product",
+        "az": "Gips altlıq qab"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1787309550001_g2.jfif",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
+    },
+    {
+      "id": 1787309540948,
+      "name": {
+        "en": "New Product",
+        "az": "Yeni Məhsul"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
     }
   ]
 }
