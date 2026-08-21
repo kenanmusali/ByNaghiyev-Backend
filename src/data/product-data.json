@@ -355,6 +355,40 @@
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
       "ebayUrl": "",
       "hidden": false
+    },
+    {
+      "id": 1787311588876,
+      "name": {
+        "en": "Decorative product",
+        "az": "Dekorativ mücrü"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1787311628339_g7.jfif",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
+    },
+    {
+      "id": 1787311692795,
+      "name": {
+        "en": "Incense holders",
+        "az": "Tütsü qabları"
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1787311704685_g8.jfif",
+      "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
+      "instagramUrl": "",
+      "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
+      "ebayUrl": "",
+      "hidden": false
     }
   ]
 }
