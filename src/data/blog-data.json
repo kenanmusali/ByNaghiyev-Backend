@@ -98,21 +98,17 @@
           "en": "The Art of Natural Scented Candles",
           "az": "Təbii Ətirli Şamların Sənəti"
         },
-        "images": [
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
-        ],
+        "images": [],
         "paragraphs": {
           "en": [
-            "Discover the enchanting world of natural scented candles, where each flame tells a story of craftsmanship and nature's finest ingredients. Our hand-poured candles are created using only the highest quality natural waxes, including soy, coconut, and beeswax, ensuring a clean and long-lasting burn.",
-            "The journey of creating the perfect scented candle begins with selecting the finest essential oils. Each fragrance is carefully curated to evoke specific moods and memories, from calming lavender fields to invigorating citrus groves.",
-            "When you light one of our candles, you're not just creating ambiance - you're supporting traditional craftsmanship and sustainable practices. The warm glow and subtle fragrance transform any space into a sanctuary of calm and relaxation."
+            "Ceramic products will soon be sold under the \"ByNaghiyev\" brand.",
+            "",
+            "The production and sale of epoxy products by the \"ByNaghiyev\" brand will soon be launched.\n"
           ],
           "az": [
-            "Təbii ətirli şamların sehrli dünyasını kəşf edin, burada hər bir alov sənətkarlıq və təbiətin ən yaxşı tərkib hissələrinin hekayəsini danışır. Əllə tökülən şamlarımız yalnız ən yüksək keyfiyyətli təbii mumlardan, o cümlədən soya, kokos və arı mumundan hazırlanır, təmiz və uzunmüddətli yanma təmin edir.",
-            "Mükəmməl ətirli şam yaratmaq səyahəti ən yaxşı efir yağlarını seçməklə başlayır. Hər bir ətir xüsusi əhval-ruhiyyə və xatirələri canlandırmaq üçün diqqətlə seçilir, sakitləşdirici lavanda çöllərindən tutmuş canlandırıcı sitrus bağlarına qədər.",
-            "Şamlarımızdan birini yandırdığınız zaman, sadəcə atmosfer yaratmırsınız - siz ənənəvi sənətkarlığı və davamlı təcrübələri dəstəkləyirsiniz. İsti parıltı və incə ətir istənilən məkanı sakitlik və rahatlama məkanına çevirir."
+            "Tezliklə \"ByNaghiyev\" brendi tərəfindən keramik məhsulların satışı həyata keçiriləcək.",
+            "",
+            "Tezliklə \"ByNaghiyev\" brendi tərəfindən epoxsi məhsullarının hazırlanması və satışı həyata keçiriləcək."
           ]
         }
       }
@@ -152,6 +148,38 @@
             "Aromaterapiya min illərdir tətbiq olunur, bitki essensiyalarının gücündən istifadə edərək fiziki və emosional sağlamlığı təşviq edir.",
             "Şamlarımızdakı hər bir efir yağı xüsusi məqsədə xidmət edir. Lavanda rahatlama və dinc yuxunu təşviq edir, nanə canlandırır və diqqəti yaxşılaşdırır.",
             "Şamlarımız bu terapevtik faydaları maksimuma çatdırmaq üçün hazırlanmışdır. Effektiv aromaterapiyanı təmin etmək üçün mükəmməl efir yağı konsentrasiyasından istifadə edirik."
+          ]
+        }
+      }
+    },
+    {
+      "id": 1787314605611,
+      "name": {
+        "en": "New Blog",
+        "az": "Yeni Bloq"
+      },
+      "time": {
+        "en": "",
+        "az": ""
+      },
+      "description": {
+        "en": "",
+        "az": ""
+      },
+      "image": "",
+      "hidden": false,
+      "expandedContent": {
+        "title": {
+          "en": "",
+          "az": ""
+        },
+        "images": [],
+        "paragraphs": {
+          "en": [
+            ""
+          ],
+          "az": [
+            ""
           ]
         }
       }
