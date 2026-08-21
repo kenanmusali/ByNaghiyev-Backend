@@ -81,8 +81,8 @@
     {
       "id": 3,
       "name": {
-        "en": "Ceramic ",
-        "az": "Keramik qablar"
+        "en": "Ceramic products",
+        "az": "Keramik məhsullar"
       },
       "time": {
         "en": "",
@@ -95,20 +95,20 @@
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521619829_de501e00-a96f-4300-8437-542af4c06494.jfif",
       "expandedContent": {
         "title": {
-          "en": "The Art of Natural Scented Candles",
-          "az": "Təbii Ətirli Şamların Sənəti"
+          "en": "",
+          "az": ""
         },
         "images": [],
         "paragraphs": {
           "en": [
             "Ceramic products will soon be sold under the \"ByNaghiyev\" brand.",
             "",
-            "The production and sale of epoxy products by the \"ByNaghiyev\" brand will soon be launched.\n"
+            ""
           ],
           "az": [
             "Tezliklə \"ByNaghiyev\" brendi tərəfindən keramik məhsulların satışı həyata keçiriləcək.",
             "",
-            "Tezliklə \"ByNaghiyev\" brendi tərəfindən epoxsi məhsullarının hazırlanması və satışı həyata keçiriləcək."
+            ""
           ]
         }
       }
@@ -130,55 +130,19 @@
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521965088_967e868e-7528-4219-b4fa-859f2cabdfc4.jfif",
       "expandedContent": {
         "title": {
-          "en": "Aromatherapy Benefits",
-          "az": "Aromaterapiyanın Faydaları"
-        },
-        "images": [
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog1.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog2.png",
-          "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/img/blog/blog3.png"
-        ],
-        "paragraphs": {
-          "en": [
-            "Aromatherapy has been practiced for thousands of years, harnessing the power of plant essences to promote physical and emotional well-being.",
-            "Each essential oil in our candles serves a specific purpose. Lavender promotes relaxation and restful sleep, peppermint invigorates and improves focus.",
-            "Our candles are formulated to maximize these therapeutic benefits. We use the perfect concentration of essential oils to ensure effective aromatherapy."
-          ],
-          "az": [
-            "Aromaterapiya min illərdir tətbiq olunur, bitki essensiyalarının gücündən istifadə edərək fiziki və emosional sağlamlığı təşviq edir.",
-            "Şamlarımızdakı hər bir efir yağı xüsusi məqsədə xidmət edir. Lavanda rahatlama və dinc yuxunu təşviq edir, nanə canlandırır və diqqəti yaxşılaşdırır.",
-            "Şamlarımız bu terapevtik faydaları maksimuma çatdırmaq üçün hazırlanmışdır. Effektiv aromaterapiyanı təmin etmək üçün mükəmməl efir yağı konsentrasiyasından istifadə edirik."
-          ]
-        }
-      }
-    },
-    {
-      "id": 1787314605611,
-      "name": {
-        "en": "New Blog",
-        "az": "Yeni Bloq"
-      },
-      "time": {
-        "en": "",
-        "az": ""
-      },
-      "description": {
-        "en": "",
-        "az": ""
-      },
-      "image": "",
-      "hidden": false,
-      "expandedContent": {
-        "title": {
           "en": "",
           "az": ""
         },
         "images": [],
         "paragraphs": {
           "en": [
+            "The production and sale of epoxy products by the \"ByNaghiyev\" brand will soon be launched.\n",
+            "",
             ""
           ],
           "az": [
+            "Tezliklə \"ByNaghiyev\" brendi tərəfindən epoxsi məhsullarının hazırlanması və satışı həyata keçiriləcək.",
+            "",
             ""
           ]
         }
