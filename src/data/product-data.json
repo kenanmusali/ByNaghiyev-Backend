@@ -291,14 +291,14 @@
     {
       "id": 1787309540948,
       "name": {
-        "en": "New Product",
-        "az": "Yeni Məhsul"
+        "en": "Gypsum stend",
+        "az": "Gips stend"
       },
       "description": {
         "en": "",
         "az": ""
       },
-      "image": "",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1787310029292_g3.jfif",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
       "instagramUrl": "",
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
