@@ -47,7 +47,7 @@
       "id": 2,
       "name": {
         "en": "Decorative plaster vessels",
-        "az": "Gips dekor qablar"
+        "az": "Gips məhsullar"
       },
       "time": {
         "en": "02.12.2025",
@@ -60,8 +60,8 @@
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521389647_Gemini_Generated_Image_o89q2uo89q2uo89q.png",
       "expandedContent": {
         "title": {
-          "en": "Aromatherapy Benefits",
-          "az": "Aromaterapiyanın Faydaları"
+          "en": "",
+          "az": "Gips məhsullar"
         },
         "images": [
           "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786504377522_IMG_3098.JPG.jpeg",
