@@ -1,7 +1,7 @@
 {
   "sectionTitle": {
-    "en": "Varieties",
-    "az": "Çeşidlər"
+    "en": "Products",
+    "az": "Məhsullar"
   },
   "orderNowText": {
     "en": "Order Now",
@@ -255,16 +255,16 @@
       "hidden": false
     },
     {
-      "id": 1787228906759,
+      "id": 1787309304764,
       "name": {
-        "en": "Gips qablar",
-        "az": "Yeni Məhsul"
+        "en": "Gypsum products",
+        "az": "Gips əşyalar"
       },
       "description": {
         "en": "",
         "az": ""
       },
-      "image": "blob:https://bynaghiyev-admin.vercel.app/deb70ffe-89a2-47f3-af79-aef039c67713",
+      "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/product/1787309325753_g1.jfif",
       "instagramIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/instagram.svg",
       "instagramUrl": "",
       "ebayIcon": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/EBay.svg",
