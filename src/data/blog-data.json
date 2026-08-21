@@ -46,11 +46,11 @@
     {
       "id": 2,
       "name": {
-        "en": "Decorative plaster vessels",
+        "en": "Gypsum products",
         "az": "Gips məhsullar"
       },
       "time": {
-        "en": "02.12.2025",
+        "en": "",
         "az": ""
       },
       "description": {
@@ -60,7 +60,7 @@
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521389647_Gemini_Generated_Image_o89q2uo89q2uo89q.png",
       "expandedContent": {
         "title": {
-          "en": "",
+          "en": "Gypsum products",
           "az": "Gips məhsullar"
         },
         "images": [
