@@ -1,6 +1,6 @@
 {
   "sectionTitle": {
-    "en": "Products",
+    "en": "Varieties",
     "az": "Çeşidlər"
   },
   "orderNowText": {
@@ -8,18 +8,18 @@
     "az": "Sifariş Et"
   },
   "orderInstagramText": {
-    "en": "Order in Instagram",
+    "en": "Order on Instagram",
     "az": "Instagram-da Sifariş Et"
   },
   "orderEbayText": {
-    "en": "Order in EBay",
-    "az": "EBay-da Sifariş Et"
+    "en": "Order on eBay",
+    "az": "eBay-da Sifariş Et"
   },
   "products": [
     {
       "id": 1786535724176,
       "name": {
-        "en": "wavy candle",
+        "en": "Wavy candle",
         "az": "Dalğalı şam"
       },
       "description": {
@@ -36,7 +36,7 @@
     {
       "id": 1786535734143,
       "name": {
-        "en": "candle",
+        "en": "Scented candle",
         "az": "Ətirli şam"
       },
       "description": {
@@ -53,7 +53,7 @@
     {
       "id": 1786536080919,
       "name": {
-        "en": "buble candle",
+        "en": "Bubble candle",
         "az": "Buble şam"
       },
       "description": {
@@ -70,7 +70,7 @@
     {
       "id": 1786536110214,
       "name": {
-        "en": "New Product",
+        "en": "Decorative candle",
         "az": "Dekorativ şam"
       },
       "description": {
@@ -104,7 +104,7 @@
     {
       "id": 1786630292784,
       "name": {
-        "en": "David's candle",
+        "en": "David candle",
         "az": "David şamı"
       },
       "description": {
@@ -121,7 +121,7 @@
     {
       "id": 1786630465926,
       "name": {
-        "en": "   Winter tale ",
+        "en": "“Winter Tale” candle",
         "az": "\"Qış nağılı\" şamı"
       },
       "description": {
@@ -138,8 +138,8 @@
     {
       "id": 1786630712844,
       "name": {
-        "en": "Moai candle ",
-        "az": "Moai "
+        "en": "Moai candle",
+        "az": "Moai şamı"
       },
       "description": {
         "en": "",
@@ -189,8 +189,8 @@
     {
       "id": 1786631650374,
       "name": {
-        "en": "Decor ",
-        "az": "Dekorativ "
+        "en": "Decor",
+        "az": "Dekorativ"
       },
       "description": {
         "en": "",
@@ -206,7 +206,7 @@
     {
       "id": 1786632113536,
       "name": {
-        "en": "New Product",
+        "en": "Tetris",
         "az": "Tetris"
       },
       "description": {
@@ -224,7 +224,7 @@
       "id": 1786632489977,
       "name": {
         "en": "Thoughts",
-        "az": "Düşüncələr "
+        "az": "Düşüncələr"
       },
       "description": {
         "en": "",
@@ -240,8 +240,8 @@
     {
       "id": 1786632569988,
       "name": {
-        "en": "Abstract ",
-        "az": "Abstrakt "
+        "en": "Abstract",
+        "az": "Abstrakt"
       },
       "description": {
         "en": "",
@@ -257,7 +257,7 @@
     {
       "id": 1787309304764,
       "name": {
-        "en": "Gypsum products",
+        "en": "Gypsum items",
         "az": "Gips əşyalar"
       },
       "description": {
@@ -274,7 +274,7 @@
     {
       "id": 1787309537988,
       "name": {
-        "en": "New Product",
+        "en": "Gypsum tray",
         "az": "Gips altlıq qab"
       },
       "description": {
@@ -291,7 +291,7 @@
     {
       "id": 1787309540948,
       "name": {
-        "en": "Gypsum stend",
+        "en": "Gypsum stand",
         "az": "Gips stend"
       },
       "description": {
@@ -308,8 +308,8 @@
     {
       "id": 1787310778676,
       "name": {
-        "en": "New Product",
-        "az": "Dokarativ qab"
+        "en": "Decorative bowl",
+        "az": "Dekorativ qab"
       },
       "description": {
         "en": "",
@@ -325,7 +325,7 @@
     {
       "id": 1787311121956,
       "name": {
-        "en": "Gypsum stend",
+        "en": "Gypsum stand",
         "az": "Gips stend"
       },
       "description": {
@@ -342,7 +342,7 @@
     {
       "id": 1787311186076,
       "name": {
-        "en": "Gypsum stend",
+        "en": "Gypsum coaster",
         "az": "Gips altlıq"
       },
       "description": {
@@ -359,7 +359,7 @@
     {
       "id": 1787311588876,
       "name": {
-        "en": "Decorative product",
+        "en": "Decorative box",
         "az": "Dekorativ mücrü"
       },
       "description": {
