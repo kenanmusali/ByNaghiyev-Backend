@@ -25,15 +25,15 @@
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786520448449_4b7acfaf-36c6-47fb-883b-059ce36acad4.jfif",
       "expandedContent": {
         "title": {
-          "en": "The Art of Natural Scented Candles",
+          "en": "Scented candles",
           "az": "Ətirli şamlar"
         },
         "images": [],
         "paragraphs": {
           "en": [
-            "Discover the enchanting world of natural scented candles, where each flame tells a story of craftsmanship and nature's finest ingredients. Our hand-poured candles are created using only the highest quality natural waxes, including soy, coconut, and beeswax, ensuring a clean and long-lasting burn.",
-            "The journey of creating the perfect scented candle begins with selecting the finest essential oils. Each fragrance is carefully curated to evoke specific moods and memories, from calming lavender fields to invigorating citrus groves.",
-            "When you light one of our candles, you're not just creating ambiance - you're supporting traditional craftsmanship and sustainable practices. The warm glow and subtle fragrance transform any space into a sanctuary of calm and relaxation."
+            "The candles presented under the \"ByNaghiyev\" brand are unique handmade pieces, each created with great love and refined taste. Made to bring a special atmosphere and comfort to your space, these candles are made entirely from high-quality materials that are safe for your health.",
+            "Each product stands out with a pleasant, long-lasting fragrance that fills the room as it burns and instantly transforms the atmosphere of your space. Our scented candle collection makes a meaningful gift, both for yourself and for your loved ones.",
+            "Every candle, whose quality and elegant look we stand behind, is made to give you unforgettable moments. Browse candle designs to suit every taste on our website and place your order."
           ],
           "az": [
             "\"ByNaghiyev\" brendi adı altında təqdim edilən şamlar hər biri  böyük sevgi və  incə zövqlə  ərsəyə gələn unikal əl işləridir. Olduğunuz məkana xüsusi ab-hava və rahatlıq qatmaq üçün hazırlanan bu şamlar tamamilə keyfiyyətli, sağlamlığa zərərsiz materiallardan seçilir. ",
@@ -54,8 +54,8 @@
         "az": ""
       },
       "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
+        "en": "Handcrafted Gypsum Decor",
+        "az": "Əl işi gips dekorlar"
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521389647_Gemini_Generated_Image_o89q2uo89q2uo89q.png",
       "expandedContent": {
@@ -66,14 +66,14 @@
         "images": [],
         "paragraphs": {
           "en": [
-            "The decorative plaster vessels offered by the \"ByNaghiyev\" brand are unique, handcrafted pieces that add elegance and aesthetic beauty to your home. Each product is made from high-quality, durable materials, ensuring longevity and allowing it to retain its original quality for years.",
-            "The naturalness and vibrancy of the colors used lend a special atmosphere and a unique harmony to your space. As a national brand rooted in local values, we combine traditional craftsmanship with modern design elements.",
-            "These exquisitely crafted decorative items will not only complement your home décor but also serve as a distinctive and cherished gift for your loved ones. You can browse and order candle models to suit every taste on our website."
+            "The gypsum decor pieces we offer under the \"ByNaghiyev\" brand are unique handmade items that bring elegance and aesthetic beauty to your home. Each product is made from high-quality, durable materials and is built to last, keeping its original quality for years.",
+            "The natural, vivid colours we use give your space a special atmosphere and a one-of-a-kind harmony. As a national brand that stays true to local values, we combine handcraft with modern design elements.",
+            "Thoughtfully crafted decorative pieces will complete your home decor and also make a valuable and distinctive gift for your loved ones. Browse designs to suit every taste on our website and place your order."
           ],
           "az": [
             "\"ByNaghiyev\" brendi olaraq təqdim etdiyimiz gips dekor qablar evinizə zəriflik və estetik gözəllik qatan unikal əl işləridir. Hər bir məhsul yüksək keyfiyyətli və davamlı materiallardan hazırlanaraq uzunömürlülüyü ilə seçilir, illər boyu ilk günkü keyfiyyətini qoruyub saxlayır. ",
             "İstifadə olunan rənglərin təbiiliyi və canlılığı məkanınıza xüsusi bir ab-hava və təkrarolunmaz harmoniya bəxş edir. Yerli dəyərlərimizə bağlı qalaraq fəaliyyət göstərən milli brendimiz, əl işi sənətkarlığını müasir dizayn elementləri ilə özündə birləşdirir. ",
-            "Zövqlə işlənmiş dekorativ məhsullar həm ev dekorunuzu tamamlayacaq, həm də sevdikləriniz üçün dəyərli və fərqli bir hədiyyə seçimi olacaq. Veb-saytda hər zövqə uyğun şam modelləri ilə tanış ola və sifariş edə bilərsiniz."
+            "Zövqlə işlənmiş dekorativ məhsullar həm ev dekorunuzu tamamlayacaq, həm də sevdikləriniz üçün dəyərli və fərqli bir hədiyyə seçimi olacaq. Veb-saytda hər zövqə uyğun məhsul modelləri ilə tanış ola və sifariş edə bilərsiniz."
           ]
         }
       }
@@ -89,8 +89,8 @@
         "az": ""
       },
       "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
+        "en": "Hand-shaped Ceramics",
+        "az": "Əl ilə formalaşdırılmış keramika"
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521619829_de501e00-a96f-4300-8437-542af4c06494.jfif",
       "expandedContent": {
@@ -116,16 +116,16 @@
     {
       "id": 4,
       "name": {
-        "en": "Products made of epoxy",
-        "az": "Epoxy məhsullar"
+        "en": "Epoxy products",
+        "az": "Epoksi məhsullar"
       },
       "time": {
         "en": "",
         "az": ""
       },
       "description": {
-        "en": "Natural Waxes & Essential Oils",
-        "az": "Təbii Mumlar & Efir Yağları"
+        "en": "Epoxy Resin Art Pieces",
+        "az": "Epoksi qatran sənət əsərləri"
       },
       "image": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/main/public/assets/img/blog/1786521965088_967e868e-7528-4219-b4fa-859f2cabdfc4.jfif",
       "expandedContent": {
@@ -141,7 +141,7 @@
             ""
           ],
           "az": [
-            "Tezliklə \"ByNaghiyev\" brendi tərəfindən epoxsi məhsullarının hazırlanması və satışı həyata keçiriləcək.",
+            "Tezliklə \"ByNaghiyev\" brendi tərəfindən epoksi məhsullarının hazırlanması və satışı həyata keçiriləcək.",
             "",
             ""
           ]
