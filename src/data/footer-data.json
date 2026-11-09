@@ -1,7 +1,7 @@
 {
   "logo": "https://raw.githubusercontent.com/kenanmusali/ByNaghiyev-Backend/refs/heads/main/public/assets/svg/logo.svg",
   "description": {
-    "en": "Turn your home into work of art. The right address for aesthetic touch and positive energy",
+    "en": "Turn your home into a work of art. The right place for an aesthetic touch and positive energy",
     "az": "Evinizi sənət əsərinə çevirin. Estetik toxunuş və pozitiv enerji üçün doğru ünvan"
   },
   "socialsTitle": {
@@ -21,7 +21,7 @@
     "az": "Abunə Ol"
   },
   "copyrightText": {
-    "en": "© 2026, By Naghiyev, All right reserved",
+    "en": "© 2026, By Naghiyev, All rights reserved",
     "az": "© 2026, By Naghiyev, Bütün hüquqlar qorunur"
   },
   "termsText": "Terms of use  |  Privacy Policy",
